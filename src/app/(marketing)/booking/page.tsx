@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
-import { Section, SectionHeader } from "@/components/ui/section";
+import { Section } from "@/components/ui/section";
+import { CalcomEmbed } from "@/components/marketing/calcom-embed";
 
 export const metadata: Metadata = {
   title: "Book a Free Consultation",
@@ -27,25 +28,8 @@ export default function BookingPage() {
 
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
-            {/* Cal.com embed goes here once provisioned */}
-            <div className="bg-slate-50 border-2 border-dashed border-slate-300 rounded-xl p-12 text-center min-h-[500px] flex flex-col items-center justify-center">
-              <p className="text-slate-500 text-lg font-medium">
-                Booking calendar
-              </p>
-              <p className="mt-2 text-sm text-slate-400">
-                Cal.com embed will be integrated here (F-006)
-              </p>
-              <p className="mt-6 text-slate-600">
-                In the meantime, call us directly:
-              </p>
-              <a
-                href="tel:+16315551234"
-                className="mt-2 text-2xl font-bold text-pool-600 hover:text-pool-700"
-              >
-                (631) 555-1234
-              </a>
-            </div>
+          <div className="lg:col-span-2 min-h-[600px]">
+            <CalcomEmbed calLink="kevin-the-pool-man/pool-consultation" />
           </div>
 
           <div>
