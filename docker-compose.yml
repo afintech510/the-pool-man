@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    container_name: poolman_web
+    restart: unless-stopped
+    ports:
+      - "3004:3000"
+    env_file:
+      - .env.local
+    networks:
+      - hampton_net
+
+networks:
+  hampton_net:
+    external: true
+    name: hosthampton_hampton_net
