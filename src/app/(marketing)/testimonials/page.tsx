@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
             href="https://maps.app.goo.gl/6MUw51odqoaFr1Kz8"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-pool-400 hover:text-pool-300"
+            className="text-sm font-medium text-pool-600 hover:text-pool-700"
           >
             See all reviews on Google &rarr;
           </a>

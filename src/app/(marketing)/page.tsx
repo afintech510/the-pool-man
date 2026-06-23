@@ -26,7 +26,7 @@ export default function HomePage() {
             <p className="text-sm font-semibold text-water-300 uppercase tracking-wide">
               Suffolk County&apos;s Trusted Pool Professional
             </p>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1]">
               Your pool deserves{" "}
               <span className="text-water-300">expert care</span>
             </h1>
@@ -44,7 +44,7 @@ export default function HomePage() {
                 href="/services"
                 variant="outline"
                 size="lg"
-                className="border-white/40 text-white hover:bg-white/10"
+                className="border-white/40 text-slate-900 hover:bg-white/10"
               >
                 View Our Services
               </ButtonLink>
@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* Trust bar */}
-      <section className="border-b border-slate-800 bg-slate-950">
+      <section className="border-b border-slate-200 bg-slate-50">
         <Container className="py-6">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
@@ -64,8 +64,8 @@ export default function HomePage() {
               { stat: "CBP", label: "Certified Builder" },
             ].map((item) => (
               <div key={item.label}>
-                <p className="text-2xl font-bold text-pool-300">{item.stat}</p>
-                <p className="text-sm text-slate-400">{item.label}</p>
+                <p className="text-2xl font-bold text-pool-700">{item.stat}</p>
+                <p className="text-sm text-slate-600">{item.label}</p>
               </div>
             ))}
           </div>
@@ -93,17 +93,17 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 p-6">
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-slate-900">
                 Cleaning &amp; Maintenance
               </h3>
-              <p className="mt-1 text-sm text-white/80">
+              <p className="mt-1 text-sm text-slate-900/80">
                 Weekly service, openings &amp; closings, water testing
               </p>
               <ButtonLink
                 href="/services"
                 variant="outline"
                 size="sm"
-                className="mt-3 border-white/50 text-white hover:bg-white/10"
+                className="mt-3 border-white/50 text-slate-900 hover:bg-white/10"
               >
                 Learn More
               </ButtonLink>
@@ -120,17 +120,17 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 p-6">
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-slate-900">
                 New Construction
               </h3>
-              <p className="mt-1 text-sm text-white/80">
+              <p className="mt-1 text-sm text-slate-900/80">
                 Gunite &amp; vinyl pools, spas, custom designs
               </p>
               <ButtonLink
                 href="/construction"
                 variant="outline"
                 size="sm"
-                className="mt-3 border-white/50 text-white hover:bg-white/10"
+                className="mt-3 border-white/50 text-slate-900 hover:bg-white/10"
               >
                 Learn More
               </ButtonLink>
@@ -147,17 +147,17 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 p-6">
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-slate-900">
                 Installation &amp; Servicing
               </h3>
-              <p className="mt-1 text-sm text-white/80">
+              <p className="mt-1 text-sm text-slate-900/80">
                 Heaters, salt systems, pumps, LED lighting
               </p>
               <ButtonLink
                 href="/installation"
                 variant="outline"
                 size="sm"
-                className="mt-3 border-white/50 text-white hover:bg-white/10"
+                className="mt-3 border-white/50 text-slate-900 hover:bg-white/10"
               >
                 Learn More
               </ButtonLink>
@@ -167,7 +167,7 @@ export default function HomePage() {
       </Section>
 
       {/* All services grid */}
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Services"
@@ -194,19 +194,19 @@ export default function HomePage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-sm font-semibold text-pool-400 uppercase tracking-wide">
+            <p className="text-sm font-semibold text-pool-600 uppercase tracking-wide">
               About The Pool Man
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-white">
+            <h2 className="mt-2 text-3xl font-bold text-slate-900">
               One-on-one with the owner
             </h2>
-            <p className="mt-4 text-slate-400 leading-relaxed">
+            <p className="mt-4 text-slate-600 leading-relaxed">
               The Pool Man is a trusted name in Suffolk County pool
               construction and service. With over 15 years of experience,
               owner Kevin Cherwinski has invested in customer service,
               building, designing, and repairing pools across Suffolk County.
             </p>
-            <p className="mt-4 text-slate-400 leading-relaxed">
+            <p className="mt-4 text-slate-600 leading-relaxed">
               When you work with The Pool Man, you work directly with Kevin.
               He&apos;ll guide you step-by-step through every decision — from
               design to construction to ongoing care. Your project will be
@@ -264,13 +264,13 @@ export default function HomePage() {
             },
           ].map((item) => (
             <div key={item.step} className="text-center">
-              <div className="mx-auto h-12 w-12 rounded-full bg-pool-600 text-white flex items-center justify-center text-lg font-bold">
+              <div className="mx-auto h-12 w-12 rounded-full bg-pool-600 text-slate-900 flex items-center justify-center text-lg font-bold">
                 {item.step}
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-white">
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+              <p className="mt-2 text-sm text-slate-600">{item.description}</p>
             </div>
           ))}
         </div>

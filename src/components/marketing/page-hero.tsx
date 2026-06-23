@@ -19,18 +19,18 @@ export function PageHero({
   secondaryCtaHref?: string;
 }) {
   return (
-    <section className="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
+    <section className="bg-slate-50 py-16 sm:py-20 border-b border-slate-200">
       <Container>
         <div className="max-w-3xl">
           {eyebrow && (
-            <p className="text-sm font-semibold text-pool-400 uppercase tracking-wide">
+            <p className="text-sm font-semibold text-pool-600 uppercase tracking-wide">
               {eyebrow}
             </p>
           )}
-          <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+          <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
             {title}
           </h1>
-          <p className="mt-4 text-lg text-slate-300 leading-relaxed max-w-2xl">
+          <p className="mt-4 text-lg text-slate-700 leading-relaxed max-w-2xl">
             {description}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">

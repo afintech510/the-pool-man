@@ -49,38 +49,38 @@ export default function LocationsPage() {
               key={town.slug}
               className={`rounded-lg border p-4 ${
                 town.primary
-                  ? "border-pool-300 bg-slate-800"
-                  : "border-slate-800 bg-slate-900"
+                  ? "border-pool-300 bg-pool-50"
+                  : "border-slate-200 bg-white"
               }`}
             >
               <p
                 className={`font-medium ${
-                  town.primary ? "text-pool-300" : "text-white"
+                  town.primary ? "text-pool-700" : "text-slate-900"
                 }`}
               >
                 {town.name}
               </p>
               {town.primary && (
-                <p className="text-xs text-pool-400 mt-0.5">Home base</p>
+                <p className="text-xs text-pool-600 mt-0.5">Home base</p>
               )}
               <div className="mt-2 flex flex-wrap gap-1">
                 <Link
                   href="/services"
-                  className="text-xs text-slate-500 hover:text-pool-400"
+                  className="text-xs text-slate-500 hover:text-pool-600"
                 >
                   Service
                 </Link>
-                <span className="text-xs text-slate-300">|</span>
+                <span className="text-xs text-slate-700">|</span>
                 <Link
                   href="/vinyl-liners"
-                  className="text-xs text-slate-500 hover:text-pool-400"
+                  className="text-xs text-slate-500 hover:text-pool-600"
                 >
                   Liners
                 </Link>
-                <span className="text-xs text-slate-300">|</span>
+                <span className="text-xs text-slate-700">|</span>
                 <Link
                   href="/pool-heaters"
-                  className="text-xs text-slate-500 hover:text-pool-400"
+                  className="text-xs text-slate-500 hover:text-pool-600"
                 >
                   Heaters
                 </Link>
@@ -90,13 +90,13 @@ export default function LocationsPage() {
         </div>
       </Section>
 
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 max-w-3xl">
           <SectionHeader
             title="Not sure if you're in our area?"
             description="We primarily serve Eastern Suffolk County from Center Moriches. If you're nearby, there's a good chance we can help."
           />
-          <p className="mt-6 text-slate-400 leading-relaxed">
+          <p className="mt-6 text-slate-600 leading-relaxed">
             During booking, we check your zip code against our service area. If
             you&apos;re on the edge of our range, reach out anyway — we may be able to
             accommodate you, especially for larger projects like liner

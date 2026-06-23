@@ -15,10 +15,10 @@ export default function BookingPage() {
       <section className="bg-gradient-to-br from-pool-900 to-pool-950 py-12 sm:py-16">
         <Container>
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
               Book a free consultation
             </h1>
-            <p className="mt-3 text-lg text-pool-200">
+            <p className="mt-3 text-lg text-pool-800">
               Schedule a time and we&apos;ll come out, assess your pool, and give you
               an honest recommendation. No pressure, no obligation.
             </p>
@@ -33,7 +33,7 @@ export default function BookingPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-white">
+            <h2 className="text-lg font-semibold text-slate-900">
               What to expect
             </h2>
             <div className="mt-4 space-y-6">
@@ -55,19 +55,19 @@ export default function BookingPage() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <h3 className="font-medium text-white">{item.title}</h3>
-                  <p className="mt-1 text-sm text-slate-400">
+                  <h3 className="font-medium text-slate-900">{item.title}</h3>
+                  <p className="mt-1 text-sm text-slate-600">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 p-4 bg-slate-800 rounded-lg">
-              <h3 className="text-sm font-semibold text-pool-200">
+            <div className="mt-8 p-4 bg-pool-50 rounded-lg">
+              <h3 className="text-sm font-semibold text-pool-800">
                 Service area
               </h3>
-              <p className="mt-1 text-sm text-pool-300">
+              <p className="mt-1 text-sm text-pool-700">
                 We serve Center Moriches and surrounding Eastern Suffolk County
                 towns. Your zip code will be checked during booking.
               </p>

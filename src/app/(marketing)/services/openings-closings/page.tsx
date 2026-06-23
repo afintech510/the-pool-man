@@ -32,8 +32,8 @@ export default function OpeningsClosingsPage() {
                 "Vacuum and brush pool surfaces",
                 "System check — confirm everything is running properly",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-slate-300">
-                  <span className="text-pool-400 font-bold">+</span>
+                <li key={item} className="flex gap-3 text-slate-700">
+                  <span className="text-pool-600 font-bold">+</span>
                   {item}
                 </li>
               ))}
@@ -52,8 +52,8 @@ export default function OpeningsClosingsPage() {
                 "Install and secure winter or safety cover",
                 "Shut down and drain pump, filter, heater, and chlorinator",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-slate-300">
-                  <span className="text-pool-400 font-bold">+</span>
+                <li key={item} className="flex gap-3 text-slate-700">
+                  <span className="text-pool-600 font-bold">+</span>
                   {item}
                 </li>
               ))}
@@ -62,13 +62,13 @@ export default function OpeningsClosingsPage() {
         </div>
       </Section>
 
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 max-w-3xl">
           <SectionHeader
             title="Why proper seasonal care matters"
             description="Cutting corners on openings and closings leads to freeze damage, algae blooms, equipment failures, and expensive repairs. We do it right so you don't pay for it later."
           />
-          <p className="mt-6 text-slate-400 leading-relaxed">
+          <p className="mt-6 text-slate-600 leading-relaxed">
             Every opening and closing follows our full checklist. We blow out
             every line, winterize every piece of equipment, and use
             quality chemicals. When spring comes, your pool opens faster and

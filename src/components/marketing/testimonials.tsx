@@ -64,7 +64,7 @@ const reviews = [
 function StarIcon({ filled }: { filled: boolean }) {
   return (
     <svg
-      className={`h-5 w-5 ${filled ? "text-sun-400" : "text-slate-300"}`}
+      className={`h-5 w-5 ${filled ? "text-sun-600" : "text-slate-700"}`}
       fill="currentColor"
       viewBox="0 0 20 20"
     >
@@ -87,18 +87,18 @@ export function Testimonials() {
   const featured = reviews.slice(0, 6);
 
   return (
-    <section className="py-16 sm:py-20 bg-slate-900 border-y border-slate-800">
+    <section className="py-16 sm:py-20 bg-white border-y border-slate-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-sm font-semibold text-pool-400 uppercase tracking-wide">
+          <p className="text-sm font-semibold text-pool-600 uppercase tracking-wide">
             Testimonials
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             What our customers say
           </h2>
           <div className="mt-4 flex items-center justify-center gap-2">
             <Stars count={5} />
-            <span className="text-sm text-slate-400">
+            <span className="text-sm text-slate-600">
               4.4 stars on Google &middot; BBB A+ Rated
             </span>
           </div>
@@ -108,17 +108,17 @@ export function Testimonials() {
           {featured.map((review) => (
             <div
               key={review.name}
-              className="bg-slate-950 rounded-xl border border-slate-800 p-6 flex flex-col"
+              className="bg-slate-50 rounded-xl border border-slate-200 p-6 flex flex-col"
             >
               <Stars count={review.stars} />
-              <blockquote className="mt-4 text-slate-300 text-sm leading-relaxed flex-1">
+              <blockquote className="mt-4 text-slate-700 text-sm leading-relaxed flex-1">
                 &ldquo;{review.text}&rdquo;
               </blockquote>
               <div className="mt-4 flex items-center gap-2">
-                <div className="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-pool-400 font-semibold text-sm">
+                <div className="h-8 w-8 rounded-full bg-pool-50 flex items-center justify-center text-pool-600 font-semibold text-sm">
                   {review.name.charAt(0)}
                 </div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-slate-900">
                   {review.name}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export function Testimonials() {
             href="https://maps.app.goo.gl/6MUw51odqoaFr1Kz8"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-pool-400 hover:text-pool-300"
+            className="text-sm font-medium text-pool-600 hover:text-pool-700"
           >
             See all reviews on Google &rarr;
           </a>
@@ -147,17 +147,17 @@ export function AllTestimonials() {
       {reviews.map((review) => (
         <div
           key={review.name}
-          className="bg-slate-950 rounded-xl border border-slate-800 p-6 flex flex-col"
+          className="bg-slate-50 rounded-xl border border-slate-200 p-6 flex flex-col"
         >
           <Stars count={review.stars} />
-          <blockquote className="mt-4 text-slate-300 text-sm leading-relaxed flex-1">
+          <blockquote className="mt-4 text-slate-700 text-sm leading-relaxed flex-1">
             &ldquo;{review.text}&rdquo;
           </blockquote>
           <div className="mt-4 flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-pool-400 font-semibold text-sm">
+            <div className="h-8 w-8 rounded-full bg-pool-50 flex items-center justify-center text-pool-600 font-semibold text-sm">
               {review.name.charAt(0)}
             </div>
-            <p className="text-sm font-medium text-white">
+            <p className="text-sm font-medium text-slate-900">
               {review.name}
             </p>
           </div>

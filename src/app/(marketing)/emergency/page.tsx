@@ -96,12 +96,12 @@ export default function EmergencyPage() {
       <section className="bg-gradient-to-br from-red-900 via-red-800 to-pool-900 py-16 sm:py-20">
         <Container>
           <div className="max-w-3xl">
-            <p className="text-sm font-bold text-red-300 uppercase tracking-wide">
+            <p className="text-sm font-bold text-red-900 uppercase tracking-wide">
               Emergency Pool Services
             </p>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
               Pool emergency?{" "}
-              <span className="text-sun-400">We&apos;re on it.</span>
+              <span className="text-sun-600">We&apos;re on it.</span>
             </h1>
             <p className="mt-5 text-lg text-red-100 leading-relaxed">
               Green pool, equipment failure, active leak, heater down — don&apos;t
@@ -111,7 +111,7 @@ export default function EmergencyPage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+16318787796"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-900 bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-lg"
               >
                 Call Now: (631) 878-7796
               </a>
@@ -119,7 +119,7 @@ export default function EmergencyPage() {
                 href="/booking"
                 variant="outline"
                 size="lg"
-                className="border-white/40 text-white hover:bg-white/10"
+                className="border-white/40 text-slate-900 hover:bg-white/10"
               >
                 Book Online
               </ButtonLink>
@@ -138,17 +138,17 @@ export default function EmergencyPage() {
           {emergencyServices.map((service) => (
             <div
               key={service.name}
-              className="bg-slate-900 border border-slate-800 rounded-xl p-6 hover:border-pool-300 hover:shadow-md transition-all"
+              className="bg-white border border-slate-200 rounded-xl p-6 hover:border-pool-300 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="text-lg font-bold text-slate-900">
                   {service.name}
                 </h3>
-                <span className="flex-shrink-0 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-900/50 text-red-300">
+                <span className="flex-shrink-0 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-900/50 text-red-900">
                   {service.urgency}
                 </span>
               </div>
-              <p className="mt-3 text-sm text-slate-400 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                 {service.description}
               </p>
               <div className="mt-4">
@@ -159,18 +159,18 @@ export default function EmergencyPage() {
                   {service.includes.map((item) => (
                     <li
                       key={item}
-                      className="flex gap-2 text-sm text-slate-300"
+                      className="flex gap-2 text-sm text-slate-700"
                     >
-                      <span className="text-pool-400 flex-shrink-0">&#10003;</span>
+                      <span className="text-pool-600 flex-shrink-0">&#10003;</span>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="mt-4 pt-4 border-t border-slate-800">
+              <div className="mt-4 pt-4 border-t border-slate-200">
                 <a
                   href="tel:+16318787796"
-                  className="text-sm font-semibold text-pool-400 hover:text-pool-300"
+                  className="text-sm font-semibold text-pool-600 hover:text-pool-700"
                 >
                   Call (631) 878-7796 to schedule &rarr;
                 </a>
@@ -181,7 +181,7 @@ export default function EmergencyPage() {
       </Section>
 
       {/* When to call */}
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="When to call for emergency service"
@@ -189,7 +189,7 @@ export default function EmergencyPage() {
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
             <div>
               <h3 className="font-semibold text-red-700">Call immediately</h3>
-              <ul className="mt-2 space-y-1 text-sm text-slate-300">
+              <ul className="mt-2 space-y-1 text-sm text-slate-700">
                 <li>&#x26A0; Active water leak (losing water fast)</li>
                 <li>&#x26A0; Pump motor smoking or sparking</li>
                 <li>&#x26A0; Gas smell near the heater</li>
@@ -197,8 +197,8 @@ export default function EmergencyPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold text-sun-400">Call same day</h3>
-              <ul className="mt-2 space-y-1 text-sm text-slate-300">
+              <h3 className="font-semibold text-sun-600">Call same day</h3>
+              <ul className="mt-2 space-y-1 text-sm text-slate-700">
                 <li>&#9888; Pool turned green overnight</li>
                 <li>&#9888; Pump won&apos;t start or lost prime</li>
                 <li>&#9888; Heater stopped working</li>
@@ -214,7 +214,7 @@ export default function EmergencyPage() {
       <section className="bg-pool-600 py-16">
         <Container>
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Don&apos;t wait — call Kevin now
             </h2>
             <p className="mt-3 text-lg text-pool-100 max-w-2xl mx-auto">
@@ -225,7 +225,7 @@ export default function EmergencyPage() {
             <div className="mt-8">
               <a
                 href="tel:+16318787796"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-pool-400 bg-slate-900 hover:bg-slate-800 rounded-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-pool-600 bg-white hover:bg-pool-50 rounded-lg transition-colors shadow-lg"
               >
                 (631) 878-7796
               </a>

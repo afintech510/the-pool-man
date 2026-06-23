@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------
+   THEME: "Dark Water" — inspired by the BenchworksAI demo
+   To switch back to the light theme, replace this file with globals.light.css
+   ---------------------------------------------------------------- */
+
+@theme inline {
+  /* Pool blues → Sky/Cyan (primary actions, links, accents) */
+  --color-pool-50: #f0f9ff;
+  --color-pool-100: #e0f2fe;
+  --color-pool-200: #bae6fd;
+  --color-pool-300: #7dd3fc;
+  --color-pool-400: #38bdf8;
+  --color-pool-500: #0ea5e9;
+  --color-pool-600: #0284c7;
+  --color-pool-700: #0369a1;
+  --color-pool-800: #075985;
+  --color-pool-900: #0c4a6e;
+  --color-pool-950: #082f49;
+
+  /* Water → Cyan/Teal (secondary accents, gradients) */
+  --color-water-50: #ecfeff;
+  --color-water-100: #cffafe;
+  --color-water-200: #a5f3fc;
+  --color-water-300: #67e8f9;
+  --color-water-400: #22d3ee;
+  --color-water-500: #06b6d4;
+  --color-water-600: #0891b2;
+  --color-water-700: #0e7490;
+  --color-water-800: #155e75;
+  --color-water-900: #164e63;
+
+  /* Sun → Amber (highlight accents, financing, urgency) */
+  --color-sun-50: #fffbeb;
+  --color-sun-100: #fef3c7;
+  --color-sun-200: #fde68a;
+  --color-sun-300: #fcd34d;
+  --color-sun-400: #fbbf24;
+  --color-sun-500: #f59e0b;
+  --color-sun-600: #d97706;
+  --color-sun-700: #b45309;
+  --color-sun-800: #92400e;
+  --color-sun-900: #78350f;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+::selection {
+  background-color: #06b6d4;
+  color: #0f172a;
+}

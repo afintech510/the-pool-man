@@ -54,7 +54,7 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Specialty installations"

@@ -28,31 +28,31 @@ export default function GasHeatersPage() {
             { title: "Weekend/occasional use", description: "If you only heat your pool for weekends or events, gas heaters are cost-effective because they heat quickly and shut off." },
           ].map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.description}</p>
+              <h3 className="font-semibold text-slate-900">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 max-w-3xl">
           <SectionHeader title="Installation considerations" />
-          <ul className="mt-6 space-y-3 text-slate-300">
+          <ul className="mt-6 space-y-3 text-slate-700">
             <li className="flex gap-3">
-              <span className="text-pool-400 font-bold flex-shrink-0">1.</span>
+              <span className="text-pool-600 font-bold flex-shrink-0">1.</span>
               <span><strong>Gas supply</strong> — natural gas line or propane tank must be sized for the heater&apos;s BTU demand. We coordinate with your gas provider if needed.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-pool-400 font-bold flex-shrink-0">2.</span>
+              <span className="text-pool-600 font-bold flex-shrink-0">2.</span>
               <span><strong>Ventilation</strong> — proper clearance and exhaust venting per manufacturer specs and local code.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-pool-400 font-bold flex-shrink-0">3.</span>
+              <span className="text-pool-600 font-bold flex-shrink-0">3.</span>
               <span><strong>Plumbing integration</strong> — the heater is plumbed into your existing equipment pad, downstream of the filter and upstream of any salt cell.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-pool-400 font-bold flex-shrink-0">4.</span>
+              <span className="text-pool-600 font-bold flex-shrink-0">4.</span>
               <span><strong>Permits</strong> — gas appliance installations may require local permits. We handle the paperwork.</span>
             </li>
           </ul>

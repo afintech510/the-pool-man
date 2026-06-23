@@ -52,13 +52,13 @@ export default function VinylLinersPage() {
             },
           ].map((item) => (
             <div key={item.step}>
-              <div className="h-10 w-10 rounded-full bg-slate-800 text-pool-300 flex items-center justify-center font-bold text-sm">
+              <div className="h-10 w-10 rounded-full bg-pool-50 text-pool-700 flex items-center justify-center font-bold text-sm">
                 {item.step}
               </div>
-              <h3 className="mt-3 font-semibold text-white">
+              <h3 className="mt-3 font-semibold text-slate-900">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-400 leading-relaxed">
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -66,7 +66,7 @@ export default function VinylLinersPage() {
         </div>
       </Section>
 
-      <section className="bg-slate-950 py-16 sm:py-20">
+      <section className="bg-slate-50 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Choose your thickness"
@@ -85,26 +85,26 @@ export default function VinylLinersPage() {
         />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-semibold text-white">Laser measurement</h3>
-            <p className="mt-2 text-sm text-slate-400">
+            <h3 className="font-semibold text-slate-900">Laser measurement</h3>
+            <p className="mt-2 text-sm text-slate-600">
               Standard liner replacements use tape measures and templates. We
               use laser measurement for sub-inch accuracy across every dimension
               of your pool.
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-white">
+            <h3 className="font-semibold text-slate-900">
               Vacuum-fit installation
             </h3>
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-slate-600">
               We use a vacuum to draw the liner tight against the walls and
               floor before filling. This eliminates wrinkles and ensures a
               smooth, clean finish.
             </p>
           </div>
           <div>
-            <h3 className="font-semibold text-white">Floor preparation</h3>
-            <p className="mt-2 text-sm text-slate-400">
+            <h3 className="font-semibold text-slate-900">Floor preparation</h3>
+            <p className="mt-2 text-sm text-slate-600">
               Before the liner goes in, we smooth and prep the pool floor.
               Rocks, debris, and imperfections under the liner cause premature
               wear — we remove them.

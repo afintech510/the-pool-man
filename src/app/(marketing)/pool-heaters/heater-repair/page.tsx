@@ -32,9 +32,9 @@ export default function HeaterRepairPage() {
             { title: "Sensor & thermostat issues", description: "Temperature sensors, pressure switches, and flow sensors can fail or drift. We test and replace as needed." },
             { title: "Noisy operation", description: "Rumbling, banging, or whistling from your heater. Usually caused by scale buildup, low flow, or combustion issues." },
           ].map((item) => (
-            <div key={item.title} className="bg-slate-900 border border-slate-800 rounded-lg p-5">
-              <h3 className="font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+            <div key={item.title} className="bg-white border border-slate-200 rounded-lg p-5">
+              <h3 className="font-semibold text-slate-900">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-600">{item.description}</p>
             </div>
           ))}
         </div>

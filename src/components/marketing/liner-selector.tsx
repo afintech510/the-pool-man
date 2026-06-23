@@ -43,8 +43,8 @@ export function LinerSelector() {
             onClick={() => setSelected(i)}
             className={`px-5 py-3 rounded-lg font-semibold text-sm transition-all cursor-pointer ${
               i === selected
-                ? "bg-pool-600 text-white shadow-md"
-                : "bg-slate-100 text-slate-300 hover:bg-slate-200"
+                ? "bg-pool-600 text-slate-900 shadow-md"
+                : "bg-slate-100 text-slate-700 hover:bg-slate-200"
             }`}
           >
             {opt.label}
@@ -52,15 +52,15 @@ export function LinerSelector() {
         ))}
       </div>
 
-      <div className="bg-slate-900 rounded-xl border border-slate-800 p-6">
-        <h3 className="text-xl font-bold text-white">{option.label}</h3>
-        <p className="mt-3 text-slate-400 leading-relaxed">
+      <div className="bg-white rounded-xl border border-slate-200 p-6">
+        <h3 className="text-xl font-bold text-slate-900">{option.label}</h3>
+        <p className="mt-3 text-slate-600 leading-relaxed">
           {option.description}
         </p>
         <ul className="mt-4 space-y-2">
           {option.features.map((f) => (
-            <li key={f} className="flex gap-2 text-sm text-slate-300">
-              <svg className="h-5 w-5 text-pool-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <li key={f} className="flex gap-2 text-sm text-slate-700">
+              <svg className="h-5 w-5 text-pool-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
               </svg>
               {f}
