@@ -29,8 +29,8 @@ const navigation = [
       { label: "Vinyl Liners", href: "/vinyl-liners" },
     ],
   },
+  { label: "Emergency", href: "/emergency" },
   { label: "Shop", href: "/shop" },
-  { label: "Service Area", href: "/locations" },
 ];
 
 function DropdownItem({ label, href }: { label: string; href: string }) {
