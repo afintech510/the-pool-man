@@ -30,10 +30,10 @@ export function CtaBanner({
               {buttonText}
             </ButtonLink>
             <a
-              href="tel:+16315551234"
+              href="tel:+16318787796"
               className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-pool-100 hover:text-white transition-colors"
             >
-              Or call (631) 555-1234
+              Or call (631) 878-7796
             </a>
           </div>
         </div>

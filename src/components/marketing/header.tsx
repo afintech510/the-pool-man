@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "../ui/container";
@@ -16,15 +17,16 @@ const navigation = [
       { label: "Pool Repairs", href: "/services/pool-repairs" },
     ],
   },
-  { label: "Vinyl Liners", href: "/vinyl-liners" },
+  { label: "Construction", href: "/construction" },
   {
-    label: "Pool Heaters",
-    href: "/pool-heaters",
+    label: "Installation",
+    href: "/installation",
     children: [
-      { label: "Heat Pumps", href: "/pool-heaters/heat-pumps" },
-      { label: "Gas Heaters", href: "/pool-heaters/gas-heaters" },
-      { label: "Heater Repair", href: "/pool-heaters/heater-repair" },
-      { label: "Heater Replacement", href: "/pool-heaters/heater-replacement" },
+      { label: "Pool Heaters", href: "/pool-heaters" },
+      { label: "Salt Water Systems", href: "/installation/salt-water-systems" },
+      { label: "Pump Installations", href: "/installation/pumps" },
+      { label: "LED Lighting", href: "/installation/led-lighting" },
+      { label: "Vinyl Liners", href: "/vinyl-liners" },
     ],
   },
   { label: "Shop", href: "/shop" },
@@ -80,18 +82,15 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-18">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-lg bg-pool-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">P</span>
-            </div>
-            <div className="leading-tight">
-              <span className="block text-lg font-bold text-pool-900">
-                The Pool Man
-              </span>
-              <span className="block text-xs text-slate-500 -mt-0.5">
-                Center Moriches, NY
-              </span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="The Pool Man"
+              width={160}
+              height={80}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -102,10 +101,10 @@ export function Header() {
 
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+16315551234"
+              href="tel:+16318787796"
               className="text-sm font-medium text-slate-700 hover:text-pool-600"
             >
-              (631) 555-1234
+              (631) 878-7796
             </a>
             <ButtonLink href="/booking" size="sm">
               Book a Consultation
@@ -157,10 +156,10 @@ export function Header() {
             ))}
             <div className="pt-4 flex flex-col gap-3">
               <a
-                href="tel:+16315551234"
+                href="tel:+16318787796"
                 className="text-center py-2 text-sm font-semibold text-pool-700"
               >
-                Call (631) 555-1234
+                Call (631) 878-7796
               </a>
               <ButtonLink href="/booking" className="w-full text-center">
                 Book a Consultation
