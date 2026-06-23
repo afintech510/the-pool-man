@@ -1,9 +1,11 @@
 import { Container } from "../ui/container";
+import { WaveBackground } from "../ui/wave-bg";
 
 export function FinancingBanner() {
   return (
-    <section className="bg-pool-950 py-12">
-      <Container>
+    <section className="relative bg-pool-950 py-12 overflow-hidden">
+      <WaveBackground />
+      <Container className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-sm font-semibold text-sun-400 uppercase tracking-wide">

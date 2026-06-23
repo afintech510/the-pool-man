@@ -26,6 +26,7 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Certifications } from "@/components/marketing/certifications";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
+import { WaveBackground } from "@/components/ui/wave-bg";
 
 export default function HomePage() {
   return (
@@ -39,7 +40,8 @@ export default function HomePage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-pool-950/75" />
+        <div className="absolute inset-0 bg-pool-950/80" />
+        <WaveBackground />
         <Container className="relative py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-water-300 uppercase tracking-wide">

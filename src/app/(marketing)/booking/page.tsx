@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { CalcomEmbed } from "@/components/marketing/calcom-embed";
+import { WaveBackground } from "@/components/ui/wave-bg";
 
 export const metadata: Metadata = {
   title: "Book a Free Consultation",
@@ -12,8 +13,9 @@ export const metadata: Metadata = {
 export default function BookingPage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-pool-900 to-pool-950 py-12 sm:py-16">
-        <Container>
+      <section className="relative bg-pool-950 py-12 sm:py-16 overflow-hidden">
+        <WaveBackground />
+        <Container className="relative">
           <div className="max-w-2xl">
             <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               Book a free consultation

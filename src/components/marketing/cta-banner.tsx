@@ -1,6 +1,7 @@
 import { Phone } from "lucide-react";
 import { ButtonLink } from "../ui/button";
 import { Container } from "../ui/container";
+import { WaveBackground } from "../ui/wave-bg";
 
 export function CtaBanner({
   title = "Ready to get started?",
@@ -14,8 +15,9 @@ export function CtaBanner({
   buttonHref?: string;
 }) {
   return (
-    <section className="bg-pool-950 py-16 sm:py-20">
-      <Container>
+    <section className="relative bg-pool-950 py-16 sm:py-20 overflow-hidden">
+      <WaveBackground />
+      <Container className="relative">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
             {title}

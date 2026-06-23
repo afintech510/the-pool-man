@@ -37,7 +37,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           <div className="lg:col-span-1">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-new.png"
               alt="The Pool Man"
               width={160}
               height={80}

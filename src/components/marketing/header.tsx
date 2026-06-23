@@ -80,7 +80,7 @@ export function Header() {
         <div className="flex items-center justify-between h-18 lg:h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-new.png"
               alt="The Pool Man"
               width={160}
               height={80}

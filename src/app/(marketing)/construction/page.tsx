@@ -5,6 +5,7 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
+import { WaveBackground } from "@/components/ui/wave-bg";
 
 export const metadata: Metadata = {
   title: "Pool Construction Suffolk County | Gunite & Vinyl Inground Pools",
@@ -26,7 +27,8 @@ export default function ConstructionPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-pool-950/90 via-pool-950/70 to-pool-950/50" />
+        <div className="absolute inset-0 bg-pool-950/80" />
+        <WaveBackground />
         <Container className="relative py-20 sm:py-28">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold text-sun-600 uppercase tracking-wide">
