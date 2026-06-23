@@ -1,3 +1,4 @@
+import { Phone } from "lucide-react";
 import { ButtonLink } from "../ui/button";
 import { Container } from "../ui/container";
 
@@ -13,11 +14,13 @@ export function CtaBanner({
   buttonHref?: string;
 }) {
   return (
-    <section className="bg-gradient-to-r from-pool-900 via-pool-800 to-water-900 py-16 border-t border-slate-200">
+    <section className="bg-pool-950 py-16 sm:py-20">
       <Container>
         <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{title}</h2>
-          <p className="mt-3 text-lg text-slate-700 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            {title}
+          </h2>
+          <p className="mt-4 text-lg text-pool-200 max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -26,8 +29,9 @@ export function CtaBanner({
             </ButtonLink>
             <a
               href="tel:+16318787796"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-slate-700 hover:text-slate-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-pool-200 hover:text-white transition-colors"
             >
+              <Phone className="h-4 w-4" />
               Or call (631) 878-7796
             </a>
           </div>
