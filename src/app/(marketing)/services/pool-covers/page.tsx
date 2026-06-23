@@ -21,34 +21,34 @@ export default function PoolCoversPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-2xl font-bold text-slate-900">Safety covers</h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
+            <h2 className="text-2xl font-bold text-white">Safety covers</h2>
+            <p className="mt-4 text-slate-400 leading-relaxed">
               Mesh and solid safety covers anchored into your deck to prevent
               accidental entry. These meet ASTM safety standards and support
               weight, giving you peace of mind whether you have kids, pets, or
               just want to keep your pool secure in the off-season.
             </p>
-            <ul className="mt-6 space-y-2 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Custom-measured to your pool shape</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> ASTM safety standard compliant</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Mesh (drainage) or solid (debris-free) options</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Spring and brass anchor installation</li>
+            <ul className="mt-6 space-y-2 text-sm text-slate-300">
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Custom-measured to your pool shape</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> ASTM safety standard compliant</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Mesh (drainage) or solid (debris-free) options</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Spring and brass anchor installation</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-slate-900">Winter covers</h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
+            <h2 className="text-2xl font-bold text-white">Winter covers</h2>
+            <p className="mt-4 text-slate-400 leading-relaxed">
               Standard winter covers provide debris protection during the
               off-season. We install them as part of our winterization service
               and remove them at opening. Affordable protection for pools that
               don&apos;t need a full safety cover.
             </p>
-            <ul className="mt-6 space-y-2 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Debris and leaf protection</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Water bag or clip secured</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Included with winterization service</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Replacement covers available</li>
+            <ul className="mt-6 space-y-2 text-sm text-slate-300">
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Debris and leaf protection</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Water bag or clip secured</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Included with winterization service</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Replacement covers available</li>
             </ul>
           </div>
         </div>

@@ -21,9 +21,9 @@ export default function HeaterReplacementPage() {
       <Section>
         <SectionHeader title="When to replace vs. repair" />
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-red-50 rounded-xl p-6">
-            <h3 className="font-semibold text-red-900">Signs it&apos;s time to replace</h3>
-            <ul className="mt-4 space-y-2 text-sm text-red-800">
+          <div className="bg-red-950 rounded-xl p-6">
+            <h3 className="font-semibold text-red-300">Signs it&apos;s time to replace</h3>
+            <ul className="mt-4 space-y-2 text-sm text-red-400">
               {[
                 "Repair cost exceeds 50% of a new unit",
                 "Heat exchanger is cracked or leaking",
@@ -37,9 +37,9 @@ export default function HeaterReplacementPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-green-50 rounded-xl p-6">
-            <h3 className="font-semibold text-green-900">When repair makes sense</h3>
-            <ul className="mt-4 space-y-2 text-sm text-green-800">
+          <div className="bg-green-950 rounded-xl p-6">
+            <h3 className="font-semibold text-green-300">When repair makes sense</h3>
+            <ul className="mt-4 space-y-2 text-sm text-green-400">
               {[
                 "Unit is under 7 years old",
                 "Issue is a single component (sensor, ignitor, board)",
@@ -54,13 +54,13 @@ export default function HeaterReplacementPage() {
             </ul>
           </div>
         </div>
-        <p className="mt-6 text-slate-600 text-sm">
+        <p className="mt-6 text-slate-400 text-sm">
           We&apos;ll always give you an honest assessment. If a repair makes sense,
           we&apos;ll say so. We don&apos;t push replacements when they&apos;re not needed.
         </p>
       </Section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader title="What's included in a replacement" />
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -71,11 +71,11 @@ export default function HeaterReplacementPage() {
               { step: "4", title: "Verification", description: "Run the heater, verify temperature rise, check for leaks, and walk you through the controls." },
             ].map((item) => (
               <div key={item.step}>
-                <div className="h-8 w-8 rounded-full bg-pool-100 text-pool-700 flex items-center justify-center font-bold text-sm">
+                <div className="h-8 w-8 rounded-full bg-slate-800 text-pool-300 flex items-center justify-center font-bold text-sm">
                   {item.step}
                 </div>
-                <h3 className="mt-3 font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{item.description}</p>
+                <h3 className="mt-3 font-semibold text-white">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-400">{item.description}</p>
               </div>
             ))}
           </div>

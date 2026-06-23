@@ -59,8 +59,8 @@ export default function WeeklyMaintenancePage() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {included.map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+              <h3 className="font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function WeeklyMaintenancePage() {
         </div>
       </Section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Why homeowners switch to us"
@@ -83,10 +83,10 @@ export default function WeeklyMaintenancePage() {
               "Local — we live and work in Eastern Suffolk",
             ].map((item) => (
               <div key={item} className="flex gap-3">
-                <svg className="h-5 w-5 text-pool-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="h-5 w-5 text-pool-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                 </svg>
-                <span className="text-slate-700">{item}</span>
+                <span className="text-slate-300">{item}</span>
               </div>
             ))}
           </div>

@@ -33,7 +33,7 @@ export default function BookingPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-slate-900">
+            <h2 className="text-lg font-semibold text-white">
               What to expect
             </h2>
             <div className="mt-4 space-y-6">
@@ -55,19 +55,19 @@ export default function BookingPage() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <h3 className="font-medium text-slate-900">{item.title}</h3>
-                  <p className="mt-1 text-sm text-slate-600">
+                  <h3 className="font-medium text-white">{item.title}</h3>
+                  <p className="mt-1 text-sm text-slate-400">
                     {item.description}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 p-4 bg-pool-50 rounded-lg">
-              <h3 className="text-sm font-semibold text-pool-800">
+            <div className="mt-8 p-4 bg-slate-800 rounded-lg">
+              <h3 className="text-sm font-semibold text-pool-200">
                 Service area
               </h3>
-              <p className="mt-1 text-sm text-pool-700">
+              <p className="mt-1 text-sm text-pool-300">
                 We serve Center Moriches and surrounding Eastern Suffolk County
                 towns. Your zip code will be checked during booking.
               </p>

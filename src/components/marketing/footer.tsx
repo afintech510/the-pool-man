@@ -22,14 +22,17 @@ const footerLinks = {
   ],
   company: [
     { label: "Service Area", href: "/locations" },
+    { label: "Emergency", href: "/emergency" },
     { label: "Shop", href: "/shop" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Reviews", href: "/testimonials" },
     { label: "Book a Consultation", href: "/booking" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-pool-950 text-white mt-auto">
+    <footer className="bg-slate-950 border-t border-slate-800 mt-auto">
       <Container className="py-12 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           <div className="lg:col-span-1">
@@ -38,18 +41,18 @@ export function Footer() {
               alt="The Pool Man"
               width={160}
               height={80}
-              className="h-14 w-auto brightness-200"
+              className="h-14 w-auto"
             />
-            <address className="not-italic text-sm text-pool-200 space-y-1 mt-4">
+            <address className="not-italic text-sm text-slate-400 space-y-1 mt-4">
               <p>110 Frowein Rd</p>
               <p>Center Moriches, NY 11934</p>
               <p className="pt-1">
-                <a href="tel:+16318787796" className="hover:text-white transition-colors font-medium">
+                <a href="tel:+16318787796" className="text-pool-400 hover:text-pool-300 transition-colors font-medium">
                   (631) 878-7796
                 </a>
               </p>
               <p>
-                <a href="mailto:info@kevinthepoolman.com" className="hover:text-white transition-colors">
+                <a href="mailto:info@kevinthepoolman.com" className="hover:text-slate-200 transition-colors">
                   info@kevinthepoolman.com
                 </a>
               </p>
@@ -57,75 +60,47 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-pool-300 mb-3">
-              Services
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Services</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-pool-200 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
+                <li key={link.href}><Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">{link.label}</Link></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-pool-300 mb-3">
-              Construction
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Construction</h3>
             <ul className="space-y-2">
               {footerLinks.construction.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-pool-200 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
+                <li key={link.label}><Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">{link.label}</Link></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-pool-300 mb-3">
-              Installation
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Installation</h3>
             <ul className="space-y-2">
               {footerLinks.installation.map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-pool-200 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
+                <li key={link.label}><Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">{link.label}</Link></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-pool-300 mb-3">
-              Company
-            </h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500 mb-3">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-pool-200 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
+                <li key={link.href}><Link href={link.href} className="text-sm text-slate-400 hover:text-white transition-colors">{link.label}</Link></li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-pool-800 flex flex-col sm:flex-row justify-between gap-4 text-sm text-pool-400">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} The Pool Man. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Facebook
-            </a>
-            <a href="https://www.instagram.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              Instagram
-            </a>
+            <a href="https://www.facebook.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
           </div>
         </div>
       </Container>

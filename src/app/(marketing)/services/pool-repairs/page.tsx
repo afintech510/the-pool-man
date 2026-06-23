@@ -51,8 +51,8 @@ export default function PoolRepairsPage() {
             },
           ].map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+              <h3 className="font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                 {item.description}
               </p>
             </div>

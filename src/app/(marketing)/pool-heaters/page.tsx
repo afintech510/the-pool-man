@@ -52,7 +52,7 @@ export default function PoolHeatersPage() {
         </div>
       </Section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Heat pump vs. gas: which is right for you?"
@@ -61,9 +61,9 @@ export default function PoolHeatersPage() {
             <table className="w-full text-sm text-left">
               <thead>
                 <tr className="border-b border-slate-300">
-                  <th className="py-3 pr-6 font-semibold text-slate-900"></th>
-                  <th className="py-3 px-6 font-semibold text-pool-700">Heat Pump</th>
-                  <th className="py-3 px-6 font-semibold text-sun-700">Gas Heater</th>
+                  <th className="py-3 pr-6 font-semibold text-white"></th>
+                  <th className="py-3 px-6 font-semibold text-pool-300">Heat Pump</th>
+                  <th className="py-3 px-6 font-semibold text-sun-400">Gas Heater</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200">
@@ -77,9 +77,9 @@ export default function PoolHeatersPage() {
                   ["Noise", "Quiet fan", "Virtually silent"],
                 ].map(([label, pump, gas]) => (
                   <tr key={label}>
-                    <td className="py-3 pr-6 font-medium text-slate-900">{label}</td>
-                    <td className="py-3 px-6 text-slate-600">{pump}</td>
-                    <td className="py-3 px-6 text-slate-600">{gas}</td>
+                    <td className="py-3 pr-6 font-medium text-white">{label}</td>
+                    <td className="py-3 px-6 text-slate-400">{pump}</td>
+                    <td className="py-3 px-6 text-slate-400">{gas}</td>
                   </tr>
                 ))}
               </tbody>

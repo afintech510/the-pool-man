@@ -30,20 +30,20 @@ export default function HeatPumpsPage() {
             { title: "Low maintenance", description: "Annual inspection and cleaning is all that's needed. No gas line concerns, no heat exchanger corrosion from combustion byproducts." },
           ].map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+              <h3 className="font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 max-w-3xl">
           <SectionHeader
             title="Sizing matters"
             description="An undersized heat pump can't keep up. An oversized one wastes money upfront. We size it right."
           />
-          <p className="mt-6 text-slate-600 leading-relaxed">
+          <p className="mt-6 text-slate-400 leading-relaxed">
             Heat pump sizing depends on your pool&apos;s surface area, volume, sun
             exposure, wind exposure, and your desired temperature. We calculate
             the right BTU output for your specific pool — not a rough estimate

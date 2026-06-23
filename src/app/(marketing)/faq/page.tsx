@@ -143,14 +143,14 @@ export default function FaqPage() {
         <div className="max-w-3xl mx-auto space-y-12">
           {faqs.map((section) => (
             <div key={section.category}>
-              <h2 className="text-xl font-bold text-slate-900 border-b border-slate-200 pb-2">
+              <h2 className="text-xl font-bold text-white border-b border-slate-800 pb-2">
                 {section.category}
               </h2>
               <dl className="mt-4 space-y-6">
                 {section.questions.map((faq) => (
                   <div key={faq.q}>
-                    <dt className="font-semibold text-slate-900">{faq.q}</dt>
-                    <dd className="mt-1 text-sm text-slate-600 leading-relaxed">
+                    <dt className="font-semibold text-white">{faq.q}</dt>
+                    <dd className="mt-1 text-sm text-slate-400 leading-relaxed">
                       {faq.a}
                     </dd>
                   </div>

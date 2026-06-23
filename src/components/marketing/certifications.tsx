@@ -9,7 +9,7 @@ const certs = [
 
 export function Certifications() {
   return (
-    <section className="border-y border-slate-200 bg-white py-8">
+    <section className="border-y border-slate-800 bg-slate-950 py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
@@ -24,7 +24,7 @@ export function Certifications() {
               />
             ))}
           </div>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-400">
             <span className="flex items-center gap-1">
               <span className="text-blue-700 font-bold">BBB</span> A+ Rating
             </span>

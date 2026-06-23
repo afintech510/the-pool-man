@@ -86,51 +86,51 @@ export default function ConstructionPage() {
           description="Each pool is designed specifically for your property. We don't use cookie-cutter templates — Kevin works with you one-on-one from concept to completion."
         />
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="bg-white border border-slate-200 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-slate-900">
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-white">
               Gunite Swimming Pools
             </h3>
-            <p className="mt-3 text-slate-600 leading-relaxed">
+            <p className="mt-3 text-slate-400 leading-relaxed">
               The gold standard in inground pool construction. Gunite
               (shotcrete) pools are built with a steel-reinforced concrete
               shell that can be shaped into any size, depth, or design.
               Finished with plaster, pebble, or tile for a custom look that
               lasts decades.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Unlimited shape and size flexibility</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Built-in benches, tanning ledges, and custom steps</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Plaster, pebble, or tile finish options</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> 50+ year structural lifespan</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Increases property value</li>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Unlimited shape and size flexibility</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Built-in benches, tanning ledges, and custom steps</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Plaster, pebble, or tile finish options</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> 50+ year structural lifespan</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Increases property value</li>
             </ul>
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-slate-900">
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-white">
               Vinyl Inground Pools
             </h3>
-            <p className="mt-3 text-slate-600 leading-relaxed">
+            <p className="mt-3 text-slate-400 leading-relaxed">
               A cost-effective inground option with a smooth, non-abrasive
               vinyl liner surface. Steel or polymer wall construction with
               a concrete bottom. Wide variety of liner patterns and colors.
               Faster installation timeline than gunite.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Lower upfront cost than gunite</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Smooth, comfortable surface</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Custom shapes and sizes available</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Faster build timeline (4–6 weeks typical)</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Easy liner replacement when needed</li>
+            <ul className="mt-4 space-y-2 text-sm text-slate-300">
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Lower upfront cost than gunite</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Smooth, comfortable surface</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Custom shapes and sizes available</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Faster build timeline (4–6 weeks typical)</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Easy liner replacement when needed</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-8 bg-slate-50 border border-slate-200 rounded-xl p-8">
-          <h3 className="text-2xl font-bold text-slate-900">
+        <div className="mt-8 bg-slate-950 border border-slate-800 rounded-xl p-8">
+          <h3 className="text-2xl font-bold text-white">
             Pool Spas &amp; Hot Tubs
           </h3>
-          <p className="mt-3 text-slate-600 leading-relaxed max-w-3xl">
+          <p className="mt-3 text-slate-400 leading-relaxed max-w-3xl">
             Add a built-in spa or hot tub to your new pool, or as a
             standalone addition to your backyard. Gunite spas with custom
             jets, lighting, and spillover features that complement your pool
@@ -140,7 +140,7 @@ export default function ConstructionPage() {
       </Section>
 
       {/* The construction process */}
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Process"
@@ -190,10 +190,10 @@ export default function ConstructionPage() {
                 <div className="h-10 w-10 rounded-full bg-pool-600 text-white flex items-center justify-center font-bold text-sm">
                   {item.step}
                 </div>
-                <h3 className="mt-3 font-semibold text-slate-900">
+                <h3 className="mt-3 font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -206,25 +206,25 @@ export default function ConstructionPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-sm font-semibold text-pool-600 uppercase tracking-wide">
+            <p className="text-sm font-semibold text-pool-400 uppercase tracking-wide">
               Pool Renovation
             </p>
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">
+            <h2 className="mt-2 text-3xl font-bold text-white">
               Transform your existing pool
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
+            <p className="mt-4 text-slate-400 leading-relaxed">
               Don&apos;t tear it out — renovate it. We modernize aging pools
               with new liners, updated equipment, resurfacing, new tile and
               coping, LED lighting, and water features. Make your old pool
               feel brand new.
             </p>
-            <ul className="mt-6 space-y-2 text-sm text-slate-700">
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Complete pool resurfacing</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> New tile, coping, and decking</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Equipment upgrades (pumps, heaters, salt systems)</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> LED lighting and water features</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Vinyl liner replacement</li>
-              <li className="flex gap-2"><span className="text-pool-600">&#10003;</span> Safety cover installation</li>
+            <ul className="mt-6 space-y-2 text-sm text-slate-300">
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Complete pool resurfacing</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> New tile, coping, and decking</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Equipment upgrades (pumps, heaters, salt systems)</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> LED lighting and water features</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Vinyl liner replacement</li>
+              <li className="flex gap-2"><span className="text-pool-400">&#10003;</span> Safety cover installation</li>
             </ul>
             <div className="mt-6">
               <ButtonLink href="/booking">
@@ -232,7 +232,7 @@ export default function ConstructionPage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="bg-pool-100 rounded-2xl aspect-[4/3] flex items-center justify-center">
+          <div className="bg-slate-800 rounded-2xl aspect-[4/3] flex items-center justify-center">
             <Image
               src="/images/pool-installation.jpg"
               alt="Pool renovation and installation"
@@ -245,7 +245,7 @@ export default function ConstructionPage() {
       </Section>
 
       {/* Why Kevin */}
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why The Pool Man"
@@ -280,8 +280,8 @@ export default function ConstructionPage() {
               },
             ].map((item) => (
               <div key={item.title}>
-                <h3 className="font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                <h3 className="font-semibold text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -304,8 +304,8 @@ export default function ConstructionPage() {
             { q: "Gunite or vinyl — which is better?", a: "Both are great. Gunite offers unlimited design flexibility and lasts 50+ years. Vinyl is more cost-effective and faster to install. Kevin will help you decide during the consultation." },
           ].map((faq) => (
             <div key={faq.q}>
-              <h3 className="font-semibold text-slate-900">{faq.q}</h3>
-              <p className="mt-1 text-sm text-slate-600">{faq.a}</p>
+              <h3 className="font-semibold text-white">{faq.q}</h3>
+              <p className="mt-1 text-sm text-slate-400">{faq.a}</p>
             </div>
           ))}
           <ButtonLink href="/faq" variant="ghost" size="sm">

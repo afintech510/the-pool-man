@@ -30,8 +30,8 @@ export default function LedLightingPage() {
             { title: "Retrofit installation", description: "We can retrofit LED lights into most existing pools without draining. New niches, conduit, and transformer included when needed." },
           ].map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+              <h3 className="font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

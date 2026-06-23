@@ -30,23 +30,23 @@ export default function SaltWaterPage() {
             { title: "Gentle on equipment", description: "Properly maintained salt systems are gentle on your pool surfaces, plumbing, and equipment." },
           ].map((item) => (
             <div key={item.title}>
-              <h3 className="font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.description}</p>
+              <h3 className="font-semibold text-white">{item.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      <section className="bg-slate-50 py-16 sm:py-20">
+      <section className="bg-slate-950 py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 max-w-3xl">
           <SectionHeader title="What we install & service" />
-          <ul className="mt-6 space-y-3 text-slate-700">
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> Salt chlorine generator installation (new pools and conversions)</li>
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> Salt cell cleaning and replacement</li>
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> Control board diagnostics and repair</li>
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> Flow sensor and salt sensor replacement</li>
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> System integration with existing equipment</li>
-            <li className="flex gap-3"><span className="text-pool-600 font-bold">+</span> All major brands: Hayward, Pentair, Jandy, CircuPool</li>
+          <ul className="mt-6 space-y-3 text-slate-300">
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> Salt chlorine generator installation (new pools and conversions)</li>
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> Salt cell cleaning and replacement</li>
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> Control board diagnostics and repair</li>
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> Flow sensor and salt sensor replacement</li>
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> System integration with existing equipment</li>
+            <li className="flex gap-3"><span className="text-pool-400 font-bold">+</span> All major brands: Hayward, Pentair, Jandy, CircuPool</li>
           </ul>
         </div>
       </section>

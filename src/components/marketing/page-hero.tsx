@@ -19,18 +19,18 @@ export function PageHero({
   secondaryCtaHref?: string;
 }) {
   return (
-    <section className="bg-gradient-to-br from-pool-900 to-pool-950 py-16 sm:py-20">
+    <section className="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
       <Container>
         <div className="max-w-3xl">
           {eyebrow && (
-            <p className="text-sm font-semibold text-water-300 uppercase tracking-wide">
+            <p className="text-sm font-semibold text-pool-400 uppercase tracking-wide">
               {eyebrow}
             </p>
           )}
           <h1 className="mt-2 text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
             {title}
           </h1>
-          <p className="mt-4 text-lg text-pool-200 leading-relaxed max-w-2xl">
+          <p className="mt-4 text-lg text-slate-300 leading-relaxed max-w-2xl">
             {description}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -42,7 +42,6 @@ export function PageHero({
                 href={secondaryCtaHref}
                 variant="outline"
                 size="lg"
-                className="border-pool-400 text-pool-100 hover:bg-pool-800"
               >
                 {secondaryCtaText}
               </ButtonLink>

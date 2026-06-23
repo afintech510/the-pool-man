@@ -37,23 +37,19 @@ function DropdownItem({ label, href }: { label: string; href: string }) {
   return (
     <Link
       href={href}
-      className="block px-4 py-2 text-sm text-slate-700 hover:bg-pool-50 hover:text-pool-700 transition-colors"
+      className="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white transition-colors"
     >
       {label}
     </Link>
   );
 }
 
-function NavItem({
-  item,
-}: {
-  item: (typeof navigation)[number];
-}) {
+function NavItem({ item }: { item: (typeof navigation)[number] }) {
   return (
     <div className="relative group">
       <Link
         href={item.href}
-        className="text-sm font-medium text-slate-700 hover:text-pool-600 transition-colors py-2"
+        className="text-sm font-semibold text-slate-300 hover:text-white transition-colors py-2"
       >
         {item.label}
         {item.children && (
@@ -63,7 +59,7 @@ function NavItem({
         )}
       </Link>
       {item.children && (
-        <div className="absolute left-0 top-full mt-1 w-56 rounded-lg bg-white shadow-lg ring-1 ring-slate-900/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+        <div className="absolute left-0 top-full mt-1 w-56 rounded-lg bg-slate-950 shadow-lg ring-1 ring-slate-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
           <div className="py-1">
             {item.children.map((child) => (
               <DropdownItem key={child.href} {...child} />
@@ -79,9 +75,9 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+    <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800">
       <Container>
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-18 lg:h-20">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
@@ -102,7 +98,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+16318787796"
-              className="text-sm font-medium text-slate-700 hover:text-pool-600"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
             >
               (631) 878-7796
             </a>
@@ -114,7 +110,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 -mr-2 text-slate-700"
+            className="lg:hidden p-2 -mr-2 text-slate-400 hover:text-white"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
@@ -131,14 +127,14 @@ export function Header() {
       </Container>
 
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white">
+        <div className="lg:hidden border-t border-slate-800 bg-slate-950">
           <Container className="py-4 space-y-1">
             {navigation.map((item) => (
               <div key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-2 text-base font-medium text-slate-900"
+                  className="block py-2 text-base font-medium text-slate-200"
                 >
                   {item.label}
                 </Link>
@@ -147,7 +143,7 @@ export function Header() {
                     key={child.href}
                     href={child.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block py-1.5 pl-4 text-sm text-slate-600"
+                    className="block py-1.5 pl-4 text-sm text-slate-400 hover:text-white"
                   >
                     {child.label}
                   </Link>
@@ -157,7 +153,7 @@ export function Header() {
             <div className="pt-4 flex flex-col gap-3">
               <a
                 href="tel:+16318787796"
-                className="text-center py-2 text-sm font-semibold text-pool-700"
+                className="text-center py-2 text-sm font-semibold text-pool-400"
               >
                 Call (631) 878-7796
               </a>
