@@ -32,10 +32,10 @@ export default function ConstructionPage() {
             <p className="text-sm font-semibold text-sun-600 uppercase tracking-wide">
               APSP Certified Building Professional
             </p>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
               Custom inground pool construction in Suffolk County
             </h1>
-            <p className="mt-5 text-lg text-pool-100 leading-relaxed">
+            <p className="mt-5 text-lg text-pool-200 leading-relaxed">
               Your backyard deserves more than a generic pool. Kevin
               Cherwinski designs and builds custom gunite and vinyl inground
               pools tailored to your property, your lifestyle, and your
@@ -48,12 +48,12 @@ export default function ConstructionPage() {
               </ButtonLink>
               <a
                 href="tel:+16318787796"
-                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-slate-900 border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white border-2 border-white/30 rounded-lg hover:bg-white/10 transition-colors"
               >
                 Call (631) 878-7796
               </a>
             </div>
-            <p className="mt-4 text-sm text-pool-700">
+            <p className="mt-4 text-sm text-pool-300">
               Free on-site consultation &middot; Financing available &middot;
               No obligation
             </p>
@@ -64,15 +64,15 @@ export default function ConstructionPage() {
       {/* Trust signals */}
       <section className="bg-pool-600 py-4">
         <Container>
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-slate-900 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-white font-medium">
             <span>APSP Certified Building Professional</span>
-            <span className="hidden sm:inline text-pool-700">&middot;</span>
+            <span className="hidden sm:inline text-pool-300">&middot;</span>
             <span>NPC Certified</span>
-            <span className="hidden sm:inline text-pool-700">&middot;</span>
+            <span className="hidden sm:inline text-pool-300">&middot;</span>
             <span>LIPSA Gold Award 2016</span>
-            <span className="hidden sm:inline text-pool-700">&middot;</span>
+            <span className="hidden sm:inline text-pool-300">&middot;</span>
             <span>BBB A+ Rated</span>
-            <span className="hidden sm:inline text-pool-700">&middot;</span>
+            <span className="hidden sm:inline text-pool-300">&middot;</span>
             <span>HomeAdvisor 10+ Years</span>
           </div>
         </Container>

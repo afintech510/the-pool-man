@@ -15,10 +15,10 @@ export default function BookingPage() {
       <section className="bg-gradient-to-br from-pool-900 to-pool-950 py-12 sm:py-16">
         <Container>
           <div className="max-w-2xl">
-            <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
               Book a free consultation
             </h1>
-            <p className="mt-3 text-lg text-pool-800">
+            <p className="mt-3 text-lg text-pool-200">
               Schedule a time and we&apos;ll come out, assess your pool, and give you
               an honest recommendation. No pressure, no obligation.
             </p>
