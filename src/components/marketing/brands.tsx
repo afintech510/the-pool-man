@@ -1,35 +1,36 @@
+import Image from "next/image";
 import { Container } from "../ui/container";
 
 const brands = [
   {
     name: "Hayward",
     url: "https://www.hayward.com",
-    logo: "https://logo.clearbit.com/hayward.com",
+    logo: "/images/brand-hayward.svg",
   },
   {
     name: "Pentair",
     url: "https://www.pentair.com",
-    logo: "https://logo.clearbit.com/pentair.com",
+    logo: "/images/brand-pentair.svg",
   },
   {
     name: "Jandy",
     url: "https://www.jandy.com",
-    logo: "https://logo.clearbit.com/jandy.com",
+    logo: "/images/brand-jandy.svg",
   },
   {
     name: "Zodiac",
     url: "https://www.zodiacpoolsystems.com",
-    logo: "https://logo.clearbit.com/zodiacpoolsystems.com",
+    logo: "/images/brand-zodiac.svg",
   },
   {
     name: "Raypak",
     url: "https://www.raypak.com",
-    logo: "https://logo.clearbit.com/raypak.com",
+    logo: "/images/brand-raypak.svg",
   },
   {
     name: "Polaris",
     url: "https://www.polarispool.com",
-    logo: "https://logo.clearbit.com/polarispool.com",
+    logo: "/images/brand-polaris.svg",
   },
 ];
 
@@ -47,19 +48,15 @@ export function Brands() {
               href={brand.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity group"
+              className="opacity-60 hover:opacity-100 transition-opacity"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={brand.logo}
                 alt={brand.name}
-                width={48}
-                height={48}
-                className="h-10 w-10 sm:h-12 sm:w-12 object-contain grayscale group-hover:grayscale-0 transition-all"
+                width={120}
+                height={40}
+                className="h-8 sm:h-10 w-auto"
               />
-              <span className="text-xs font-medium text-slate-500 group-hover:text-slate-900 transition-colors">
-                {brand.name}
-              </span>
             </a>
           ))}
         </div>
