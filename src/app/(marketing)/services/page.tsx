@@ -63,7 +63,7 @@ export default function ServicesPage() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
             <ServiceCard
               title="Vinyl Liner Installation"
-              description="Laser-measured, custom-cut vinyl liners with zero-wrinkle installation. 20-mil and 28-mil options. The craftsmanship your pool deserves."
+              description="Precision-measured, custom-cut vinyl liners with zero-wrinkle installation. 20-mil and 28-mil options. The craftsmanship your pool deserves."
               href="/vinyl-liners"
               icon={<span className="text-lg">🎯</span>}
             />

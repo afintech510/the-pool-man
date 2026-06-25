@@ -127,14 +127,14 @@ export function Header() {
       </Container>
 
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-slate-50">
+        <div className="lg:hidden border-t border-slate-200 bg-white">
           <Container className="py-4 space-y-1">
             {navigation.map((item) => (
               <div key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block py-2 text-base font-medium text-slate-200"
+                  className="block py-2 text-base font-semibold text-slate-900"
                 >
                   {item.label}
                 </Link>

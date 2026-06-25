@@ -7,7 +7,7 @@ import { LinerSelector } from "@/components/marketing/liner-selector";
 export const metadata: Metadata = {
   title: "Vinyl Liner Installation",
   description:
-    "Precision-measured, laser-cut vinyl liner installation in Eastern Suffolk County. Zero-wrinkle craftsmanship with 20-mil and 28-mil options.",
+    "Precision-measured, precision-cut vinyl liner installation in Eastern Suffolk County. Zero-wrinkle craftsmanship with 20-mil and 28-mil options.",
 };
 
 export default function VinylLinersPage() {
@@ -15,8 +15,8 @@ export default function VinylLinersPage() {
     <>
       <PageHero
         eyebrow="Vinyl Liner Specialist"
-        title="Laser-measured, zero-wrinkle liner installation"
-        description="Every liner is precision-measured with laser technology and custom-cut to your pool's exact dimensions. No shortcuts. No wrinkles. No callbacks."
+        title="Precision-measured, zero-wrinkle liner installation"
+        description="Every liner is precision-measured and custom-cut to your pool's exact dimensions. No shortcuts. No wrinkles. No callbacks."
       />
 
       <Section>
@@ -30,7 +30,7 @@ export default function VinylLinersPage() {
               step: "1",
               title: "On-site measurement",
               description:
-                "We laser-measure your pool's exact dimensions — every radius, depth break, and step. No guessing, no standard templates.",
+                "We precisely measure your pool's exact dimensions — every radius, depth break, and step. No guessing, no standard templates.",
             },
             {
               step: "2",
@@ -70,7 +70,7 @@ export default function VinylLinersPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title="Choose your thickness"
-            description="We offer two thickness options. Both are precision-cut from your laser measurements."
+            description="We offer two thickness options. Both are precision-cut from your exact measurements."
           />
           <div className="mt-8 max-w-2xl">
             <LinerSelector />
@@ -85,10 +85,10 @@ export default function VinylLinersPage() {
         />
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
           <div>
-            <h3 className="font-semibold text-slate-900">Laser measurement</h3>
+            <h3 className="font-semibold text-slate-900">Precision measurement</h3>
             <p className="mt-2 text-sm text-slate-600">
               Standard liner replacements use tape measures and templates. We
-              use laser measurement for sub-inch accuracy across every dimension
+              use precision measurement for sub-inch accuracy across every dimension
               of your pool.
             </p>
           </div>

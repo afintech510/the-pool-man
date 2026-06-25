@@ -26,6 +26,7 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { Certifications } from "@/components/marketing/certifications";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
+import { Brands } from "@/components/marketing/brands";
 import { WaveBackground } from "@/components/ui/wave-bg";
 
 export default function HomePage() {
@@ -95,71 +96,81 @@ export default function HomePage() {
 
       <Certifications />
 
-      {/* Three pillars — card layout with image below text */}
-      <Section>
-        <SectionHeader
-          eyebrow="What We Do"
-          title="Build it. Maintain it. Fix it."
-          description="From new construction to weekly cleaning, The Pool Man handles every stage of your pool's life."
-        />
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <Calendar className="h-6 w-6" />,
-              title: "Cleaning & Maintenance",
-              description:
-                "Weekly service, seasonal openings & closings, water testing, and equipment checks to keep your pool crystal clear all season.",
-              image: "/images/pool-cleaning.jpg",
-              href: "/services",
-            },
-            {
-              icon: <HardHat className="h-6 w-6" />,
-              title: "New Construction",
-              description:
-                "Custom gunite and vinyl inground pools designed specifically for your backyard. Spas, water features, and complete landscape integration.",
-              image: "/images/pool-construction.jpg",
-              href: "/construction",
-            },
-            {
-              icon: <Wrench className="h-6 w-6" />,
-              title: "Installation & Servicing",
-              description:
-                "Heaters, salt water systems, variable speed pumps, LED lighting, and chlorine generators. Expert installation and repair.",
-              image: "/images/pool-installation.jpg",
-              href: "/installation",
-            },
-          ].map((pillar) => (
-            <a
-              key={pillar.title}
-              href={pillar.href}
-              className="group rounded-2xl border border-slate-200 overflow-hidden bg-white hover:shadow-xl hover:border-pool-300 transition-all duration-300"
-            >
-              <div className="p-6">
-                <div className="h-12 w-12 rounded-xl bg-pool-50 text-pool-600 flex items-center justify-center group-hover:bg-pool-100 transition-colors">
-                  {pillar.icon}
+      {/* Three pillars — blue wave background */}
+      <section className="relative bg-pool-950 py-16 sm:py-20 overflow-hidden">
+        <WaveBackground />
+        <Container className="relative">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold text-water-300 uppercase tracking-wide">
+              What We Do
+            </p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Build it. Maintain it. Fix it.
+            </h2>
+            <p className="mt-4 text-lg text-pool-200 leading-relaxed">
+              From new construction to weekly cleaning, The Pool Man handles
+              every stage of your pool&apos;s life.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Calendar className="h-6 w-6" />,
+                title: "Cleaning & Maintenance",
+                description:
+                  "Weekly service, seasonal openings & closings, water testing, and equipment checks to keep your pool crystal clear all season.",
+                image: "/images/pool-cleaning.jpg",
+                href: "/services",
+              },
+              {
+                icon: <HardHat className="h-6 w-6" />,
+                title: "New Construction",
+                description:
+                  "Custom gunite and vinyl inground pools designed specifically for your backyard. Spas, water features, and complete landscape integration.",
+                image: "/images/pool-construction.jpg",
+                href: "/construction",
+              },
+              {
+                icon: <Wrench className="h-6 w-6" />,
+                title: "Installation & Servicing",
+                description:
+                  "Heaters, salt water systems, variable speed pumps, LED lighting, and chlorine generators. Expert installation and repair.",
+                image: "/images/pool-installation.jpg",
+                href: "/installation",
+              },
+            ].map((pillar) => (
+              <a
+                key={pillar.title}
+                href={pillar.href}
+                className="group rounded-2xl border border-white/10 overflow-hidden bg-white/5 backdrop-blur hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+              >
+                <div className="p-6">
+                  <div className="h-12 w-12 rounded-xl bg-white/10 text-water-300 flex items-center justify-center group-hover:bg-white/15 transition-colors">
+                    {pillar.icon}
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold text-white group-hover:text-water-200 transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-pool-200 leading-relaxed">
+                    {pillar.description}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-water-300 group-hover:text-water-200">
+                    Learn more
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 </div>
-                <h3 className="mt-4 text-xl font-bold text-slate-900 group-hover:text-pool-700 transition-colors">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  {pillar.description}
-                </p>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-pool-600 group-hover:text-pool-700">
-                  Learn more
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </div>
-              <Image
-                src={pillar.image}
-                alt={pillar.title}
-                width={640}
-                height={360}
-                className="w-full aspect-[16/9] object-cover group-hover:scale-[1.02] transition-transform duration-500"
-              />
-            </a>
-          ))}
-        </div>
-      </Section>
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  width={640}
+                  height={360}
+                  className="w-full aspect-[16/9] object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                />
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Services grid */}
       <section className="bg-slate-50 py-16 sm:py-20">
@@ -173,7 +184,7 @@ export default function HomePage() {
             <ServiceCard title="Openings & Closings" description="Seasonal prep and winterization done right." href="/services/openings-closings" icon={<ShieldCheck className="h-5 w-5" />} />
             <ServiceCard title="Pool Construction" description="Custom gunite and vinyl pool design and build." href="/construction" icon={<HardHat className="h-5 w-5" />} />
             <ServiceCard title="Pool Renovation" description="Transform your existing pool with modern upgrades." href="/construction" icon={<Sparkles className="h-5 w-5" />} />
-            <ServiceCard title="Vinyl Liners" description="Laser-measured, zero-wrinkle liner installation." href="/vinyl-liners" icon={<Target className="h-5 w-5" />} />
+            <ServiceCard title="Vinyl Liners" description="Precision-measured, zero-wrinkle liner installation." href="/vinyl-liners" icon={<Target className="h-5 w-5" />} />
             <ServiceCard title="Pool Heaters" description="Heat pump and gas heater sales, install, repair." href="/pool-heaters" icon={<Flame className="h-5 w-5" />} />
             <ServiceCard title="Salt Water Systems" description="Salt chlorine generator installation and service." href="/installation/salt-water-systems" icon={<Droplets className="h-5 w-5" />} />
             <ServiceCard title="Pump Installation" description="Variable speed and single speed pump upgrades." href="/installation/pumps" icon={<Cog className="h-5 w-5" />} />
@@ -184,6 +195,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Brands */}
+      <Brands />
 
       {/* About Kevin */}
       <Section>
