@@ -41,7 +41,7 @@ export default function ConstructionPage() {
               Your backyard deserves more than a generic pool. Kevin
               Cherwinski designs and builds custom gunite and vinyl inground
               pools tailored to your property, your lifestyle, and your
-              budget. Over 15 years of hands-on experience. LIPSA Gold Award
+              budget. Over 30 years of hands-on experience. LIPSA Gold Award
               winner.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">

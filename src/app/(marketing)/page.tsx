@@ -56,7 +56,7 @@ export default function HomePage() {
               Construction, renovation, weekly maintenance, vinyl liners,
               heaters &amp; more. Owner-operated quality from Kevin
               Cherwinski &mdash; serving Center Moriches and Suffolk County
-              for over 15 years.
+              for over 30 years.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <ButtonLink href="/booking" size="lg">
@@ -80,7 +80,7 @@ export default function HomePage() {
         <Container className="py-6">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
-              { stat: "15+", label: "Years experience" },
+              { stat: "30+", label: "Years experience" },
               { stat: "4.4★", label: "Google rating" },
               { stat: "Owner", label: "Operated" },
               { stat: "CBP", label: "Certified Builder" },
@@ -211,7 +211,7 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-slate-600 leading-relaxed">
               The Pool Man is a trusted name in Suffolk County pool
-              construction and service. With over 15 years of experience,
+              construction and service. With over 30 years of experience,
               owner Kevin Cherwinski has invested in customer service,
               building, designing, and repairing pools across Suffolk County.
             </p>
