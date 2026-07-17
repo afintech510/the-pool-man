@@ -11,6 +11,7 @@ const footerLinks = {
   ],
   construction: [
     { label: "New Construction", href: "/construction" },
+    { label: "Our Work", href: "/our-work" },
     { label: "Pool Renovation", href: "/construction" },
     { label: "Vinyl Liners", href: "/vinyl-liners" },
   ],

@@ -18,6 +18,7 @@ const navigation = [
     ],
   },
   { label: "Construction", href: "/construction" },
+  { label: "Our Work", href: "/our-work" },
   {
     label: "Installation",
     href: "/installation",

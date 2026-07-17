@@ -39,6 +39,12 @@ export default function OpeningsClosingsPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 rounded-lg bg-pool-50 border border-pool-100 px-4 py-3 text-sm text-slate-700">
+              <span className="font-semibold text-slate-900">Plan ahead:</span>{" "}
+              We ask for about two weeks&apos; notice to get your pool
+              swim-ready on time. Book early in spring — opening spots fill
+              fast during peak season.
+            </p>
           </div>
 
           <div>

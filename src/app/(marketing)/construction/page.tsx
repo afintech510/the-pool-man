@@ -5,7 +5,9 @@ import { Section, SectionHeader } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
+import { Gallery } from "@/components/marketing/gallery";
 import { WaveBackground } from "@/components/ui/wave-bg";
+import { featuredItems } from "@/lib/portfolio";
 
 export const metadata = {
   ...pageSeo({
@@ -24,8 +26,8 @@ export default function ConstructionPage() {
       {/* Hero with conversion focus */}
       <section className="relative overflow-hidden">
         <Image
-          src="/images/pool-construction.jpg"
-          alt="Custom pool construction in Suffolk County"
+          src="/images/portfolio/construction-tanning-ledge.jpg"
+          alt="Custom gunite pool with tanning ledge built in Suffolk County"
           fill
           className="object-cover"
           priority
@@ -239,10 +241,10 @@ export default function ConstructionPage() {
           </div>
           <div className="bg-pool-50 rounded-2xl aspect-[4/3] flex items-center justify-center">
             <Image
-              src="/images/pool-installation.jpg"
-              alt="Pool renovation and installation"
+              src="/images/portfolio/reno-shed-loungers.jpg"
+              alt="Renovated backyard pool with new liner and poolside loungers"
               width={640}
-              height={427}
+              height={480}
               className="w-full h-full object-cover rounded-2xl"
             />
           </div>
@@ -302,7 +304,7 @@ export default function ConstructionPage() {
         />
         <div className="mt-8 max-w-3xl space-y-6">
           {[
-            { q: "How long does it take to build a pool?", a: "The average time is 4–6 weeks from breaking ground, depending on size, design, and weather. Permits typically take an additional 2–4 weeks before construction starts." },
+            { q: "How long does it take to build a pool?", a: "The average time is 4–6 weeks from breaking ground, depending on size, design, and weather. Permits are handled before construction starts, and that timeline varies by township and jurisdiction." },
             { q: "How much does a pool cost?", a: "Prices vary by size, materials, and features. We provide free on-site estimates. Financing is available through HFS with rates as low as 2.99% and terms up to 20 years." },
             { q: "Do you handle permits?", a: "Yes. We manage the permit process with your local township — surveys, applications, and inspections." },
             { q: "Do I need a fence?", a: "Yes, a barrier (fence or property perimeter) is required by code in Suffolk County for safety." },
@@ -318,6 +320,25 @@ export default function ConstructionPage() {
           </ButtonLink>
         </div>
       </Section>
+
+      {/* Recent projects */}
+      <section className="bg-slate-50 py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="Our Work"
+            title="Recent projects"
+            description="A selection of custom pools, tanning ledges, and water features we've designed and built across Suffolk County."
+          />
+          <div className="mt-10">
+            <Gallery items={featuredItems} />
+          </div>
+          <div className="mt-10">
+            <ButtonLink href="/our-work" variant="outline">
+              View the full portfolio &rarr;
+            </ButtonLink>
+          </div>
+        </div>
+      </section>
 
       {/* Financing */}
       <FinancingBanner />

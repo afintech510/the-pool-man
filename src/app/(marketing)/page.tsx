@@ -27,7 +27,9 @@ import { Testimonials } from "@/components/marketing/testimonials";
 import { Certifications } from "@/components/marketing/certifications";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
 import { Brands } from "@/components/marketing/brands";
+import { Gallery } from "@/components/marketing/gallery";
 import { WaveBackground } from "@/components/ui/wave-bg";
+import { featuredItems } from "@/lib/portfolio";
 
 export default function HomePage() {
   return (
@@ -35,8 +37,8 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <Image
-          src="/images/hero-bg.jpg"
-          alt="Beautiful swimming pool"
+          src="/images/portfolio/construction-shingle-house.jpg"
+          alt="Custom inground pool built by The Pool Man in Suffolk County"
           fill
           className="object-cover"
           priority
@@ -46,29 +48,29 @@ export default function HomePage() {
         <Container className="relative py-20 sm:py-28 lg:py-36">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold text-water-300 uppercase tracking-wide">
-              Suffolk County&apos;s Trusted Pool Professional
+              Suffolk County Pool Builder
             </p>
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
-              Your pool deserves{" "}
-              <span className="text-water-300">expert care</span>
+              Custom inground pools,{" "}
+              <span className="text-water-300">built to last</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-pool-100 leading-relaxed max-w-2xl">
-              Construction, renovation, weekly maintenance, vinyl liners,
-              heaters &amp; more. Owner-operated quality from Kevin
-              Cherwinski &mdash; serving Center Moriches and Suffolk County
-              for over 30 years.
+              Gunite and vinyl pools, spas, tanning ledges, and water
+              features &mdash; designed and built hands-on by Kevin
+              Cherwinski. Owner-operated quality across Center Moriches and
+              Suffolk County for over 30 years.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <ButtonLink href="/booking" size="lg">
                 Book a Free Consultation
               </ButtonLink>
               <ButtonLink
-                href="/services"
+                href="/our-work"
                 variant="outline"
                 size="lg"
                 className="border-white/40 text-white hover:bg-white/10"
               >
-                View Our Services
+                See Our Work
               </ButtonLink>
             </div>
           </div>
@@ -171,6 +173,23 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* Recent builds — featured portfolio strip */}
+      <Section>
+        <SectionHeader
+          eyebrow="Our Work"
+          title="Recent builds & renovations"
+          description="A look at custom pools, tanning ledges, and water features we've built across Suffolk County."
+        />
+        <div className="mt-10">
+          <Gallery items={featuredItems} />
+        </div>
+        <div className="mt-10">
+          <ButtonLink href="/our-work" variant="outline">
+            View the full portfolio &rarr;
+          </ButtonLink>
+        </div>
+      </Section>
 
       {/* Services grid */}
       <section className="bg-slate-50 py-16 sm:py-20">

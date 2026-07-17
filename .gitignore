@@ -21,6 +21,11 @@ node_modules/
 Thumbs.db
 *.pem
 
+# local editor / working artifacts (not for the repo)
+.nimbalyst/
+nimbalyst-local/
+claude/
+
 # debug
 npm-debug.log*
 

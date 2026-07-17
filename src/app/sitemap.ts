@@ -14,6 +14,7 @@ const routes: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/services/pool-covers", priority: 0.7, changeFrequency: "monthly" },
   { path: "/services/pool-repairs", priority: 0.8, changeFrequency: "monthly" },
   { path: "/construction", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/our-work", priority: 0.9, changeFrequency: "monthly" },
   { path: "/vinyl-liners", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pool-heaters", priority: 0.9, changeFrequency: "monthly" },
   { path: "/pool-heaters/gas-heaters", priority: 0.7, changeFrequency: "monthly" },
