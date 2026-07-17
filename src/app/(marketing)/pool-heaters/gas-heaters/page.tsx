@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Gas Pool Heaters",
   description:
     "Natural gas and propane pool heater installation in Eastern Suffolk County. Fast, powerful heating for pools and spas.",
-};
+  path: "/pool-heaters/gas-heaters",
+});
 
 export default function GasHeatersPage() {
   return (

@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Heat Pumps",
   description:
     "Energy-efficient pool heat pump installation in Eastern Suffolk County. Extend your swim season from April through October with lower operating costs.",
-};
+  path: "/pool-heaters/heat-pumps",
+});
 
 export default function HeatPumpsPage() {
   return (

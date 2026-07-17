@@ -99,8 +99,8 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row justify-between gap-4 text-sm text-slate-500">
           <p>&copy; {new Date().getFullYear()} The Pool Man. All rights reserved.</p>
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Facebook</a>
-            <a href="https://www.instagram.com/kevinthepoolman" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Instagram</a>
+            <a href="https://www.facebook.com/kevinthepoolmanconstruction" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/kevincherwinski" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Instagram</a>
           </div>
         </div>
       </Container>

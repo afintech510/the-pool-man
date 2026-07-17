@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Covers",
   description:
     "Safety covers and winter covers for your pool. Custom-fitted installation and service in Eastern Suffolk County.",
-};
+  path: "/services/pool-covers",
+});
 
 export default function PoolCoversPage() {
   return (

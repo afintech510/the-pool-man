@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool LED Lighting Installation",
   description:
     "LED pool and spa lighting installation in Suffolk County. Color-changing lights, energy-efficient upgrades, and new construction lighting packages.",
-};
+  path: "/installation/led-lighting",
+});
 
 export default function LedLightingPage() {
   return (

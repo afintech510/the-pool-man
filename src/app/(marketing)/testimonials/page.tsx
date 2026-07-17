@@ -1,18 +1,50 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section } from "@/components/ui/section";
-import { AllTestimonials } from "@/components/marketing/testimonials";
+import { AllTestimonials, reviews } from "@/components/marketing/testimonials";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import { JsonLd } from "@/components/seo/json-ld";
+import { pageSeo, SITE_NAME, SITE_URL } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Customer Reviews",
   description:
     "Read what our customers say about The Pool Man. 4.4 stars on Google, BBB A+ rated. Pool construction, maintenance, and service reviews from Suffolk County homeowners.",
+  path: "/testimonials",
+});
+
+// Review + AggregateRating structured data, built from the on-page testimonials.
+const reviewsJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#business`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: (
+      reviews.reduce((sum, r) => sum + r.stars, 0) / reviews.length
+    ).toFixed(1),
+    reviewCount: reviews.length,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  review: reviews.map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.name },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: r.stars,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: r.text,
+  })),
 };
 
 export default function TestimonialsPage() {
   return (
     <>
+      <JsonLd data={reviewsJsonLd} />
       <PageHero
         eyebrow="Customer Reviews"
         title="Don't take our word for it"

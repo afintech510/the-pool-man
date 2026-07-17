@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/marketing/service-card";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Equipment Installation & Service",
   description:
     "Pool heater, salt water system, pump, chlorine generator, and LED lighting installation and service in Suffolk County. Expert installation by The Pool Man.",
-};
+  path: "/installation",
+});
 
 export default function InstallationPage() {
   return (

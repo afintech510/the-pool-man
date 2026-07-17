@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
@@ -7,10 +7,13 @@ import { CtaBanner } from "@/components/marketing/cta-banner";
 import { FinancingBanner } from "@/components/marketing/financing-banner";
 import { WaveBackground } from "@/components/ui/wave-bg";
 
-export const metadata: Metadata = {
-  title: "Pool Construction Suffolk County | Gunite & Vinyl Inground Pools",
-  description:
-    "Custom inground pool construction in Suffolk County, Long Island. Gunite and vinyl swimming pools, spas, and renovations. CBP certified builder. Free estimates. Financing available.",
+export const metadata = {
+  ...pageSeo({
+    title: "Pool Construction Suffolk County | Gunite & Vinyl Inground Pools",
+    description:
+      "Custom inground pool construction in Suffolk County, Long Island. Gunite and vinyl swimming pools, spas, and renovations. CBP certified builder. Free estimates. Financing available.",
+    path: "/construction",
+  }),
   keywords:
     "pool construction Suffolk County, inground pool builder Long Island, gunite pool builder, vinyl pool construction, custom pool design, pool contractor Center Moriches, swimming pool installation Suffolk County NY",
 };

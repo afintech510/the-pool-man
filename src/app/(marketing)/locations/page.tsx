@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Service Area — Eastern Suffolk County",
   description:
     "The Pool Man serves Center Moriches, Moriches, East Moriches, Eastport, Remsenburg, Westhampton, and surrounding Eastern Suffolk County towns.",
-};
+  path: "/locations",
+});
 
 const towns = [
   { name: "Center Moriches", slug: "center-moriches", primary: true },

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { CalcomEmbed } from "@/components/marketing/calcom-embed";
 import { WaveBackground } from "@/components/ui/wave-bg";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Book a Free Consultation",
   description:
     "Schedule a free on-site pool consultation with The Pool Man. We'll assess your pool and give you an honest recommendation.",
-};
+  path: "/booking",
+});
 
 export default function BookingPage() {
   return (

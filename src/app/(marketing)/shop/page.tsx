@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Shop",
   description:
     "Pool chemicals, supplies, and equipment. Shop online or visit our counter in Center Moriches. Free professional water testing.",
-};
+  path: "/shop",
+});
 
 export default function ShopPage() {
   return (

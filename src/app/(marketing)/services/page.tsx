@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/marketing/service-card";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Services",
   description:
     "Comprehensive pool services in Eastern Suffolk County. Weekly maintenance, seasonal openings & closings, pool covers, repairs, and more.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

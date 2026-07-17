@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
 
-export const metadata: Metadata = {
-  title: "Emergency Pool Services | Same-Day Pool Repair Suffolk County",
-  description:
-    "Emergency pool repair, pool cleaning, filter cleaning, heater repair, and pool doctor services in Suffolk County. Call (631) 878-7796 for fast response.",
+export const metadata = {
+  ...pageSeo({
+    title: "Emergency Pool Services | Same-Day Pool Repair Suffolk County",
+    description:
+      "Emergency pool repair, pool cleaning, filter cleaning, heater repair, and pool doctor services in Suffolk County. Call (631) 878-7796 for fast response.",
+    path: "/emergency",
+  }),
   keywords:
     "emergency pool repair, pool doctor service, same day pool cleaning, filter cleaning near me, pool heater repair emergency, green pool cleanup Suffolk County",
 };

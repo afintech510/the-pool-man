@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/marketing/service-card";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Pool Heaters",
   description:
     "Pool heater sales, installation, repair, and replacement in Eastern Suffolk County. Heat pumps and gas heaters to extend your swim season.",
-};
+  path: "/pool-heaters",
+});
 
 export default function PoolHeatersPage() {
   return (

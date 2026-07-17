@@ -1,4 +1,4 @@
-const reviews = [
+export const reviews = [
   {
     name: "Stacy R.",
     text: "Had probably the best experience with a contractor ever! Kevin from beginning to end was on top of this project without any delays or excuses! Top tier for me!",

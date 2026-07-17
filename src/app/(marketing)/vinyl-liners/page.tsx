@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
+import { pageSeo } from "@/lib/seo";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
 import { LinerSelector } from "@/components/marketing/liner-selector";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "Vinyl Liner Installation",
   description:
     "Precision-measured, precision-cut vinyl liner installation in Eastern Suffolk County. Zero-wrinkle craftsmanship with 20-mil and 28-mil options.",
-};
+  path: "/vinyl-liners",
+});
 
 export default function VinylLinersPage() {
   return (

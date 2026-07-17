@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import { JsonLd } from "@/components/seo/json-ld";
+import { pageSeo } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageSeo({
   title: "FAQ",
   description:
     "Frequently asked questions about pool construction, maintenance, permits, financing, and more from The Pool Man in Center Moriches, NY.",
-};
+  path: "/faq",
+});
 
 const faqs = [
   {
@@ -128,9 +130,25 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.flatMap((section) =>
+    section.questions.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    }))
+  ),
+};
+
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={faqJsonLd} />
       <PageHero
         eyebrow="FAQ"
         title="Frequently asked questions"
