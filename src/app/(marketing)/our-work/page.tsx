@@ -42,13 +42,13 @@ export default function OurWorkPage() {
       {/* Construction-led image hero */}
       <section className="relative overflow-hidden">
         <Image
-          src="/images/portfolio/construction-shingle-house.jpg"
-          alt="Custom inground pool built by The Pool Man in Suffolk County"
+          src="/images/portfolio/construction-tanning-ledge.jpg"
+          alt="Custom gunite pool with tanning ledge built by The Pool Man in Suffolk County"
           fill
-          className="object-cover"
+          className="object-cover object-bottom"
           priority
         />
-        <div className="absolute inset-0 bg-pool-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pool-950/90 via-pool-950/75 to-pool-950/45" />
         <WaveBackground />
         <Container className="relative py-20 sm:py-28">
           <div className="max-w-2xl">

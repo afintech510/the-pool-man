@@ -27,6 +27,7 @@ const footerLinks = {
     { label: "Shop", href: "/shop" },
     { label: "FAQ", href: "/faq" },
     { label: "Reviews", href: "/testimonials" },
+    { label: "Contact", href: "/contact" },
     { label: "Book a Consultation", href: "/booking" },
   ],
 };

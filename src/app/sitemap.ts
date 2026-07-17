@@ -31,6 +31,7 @@ const routes: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
   { path: "/testimonials", priority: 0.7, changeFrequency: "monthly" },
   { path: "/booking", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -32,6 +32,7 @@ const navigation = [
   },
   { label: "Emergency", href: "/emergency" },
   { label: "Shop", href: "/shop" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function DropdownItem({ label, href }: { label: string; href: string }) {
