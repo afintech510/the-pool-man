@@ -78,7 +78,7 @@ export default function WeeklyMaintenancePage() {
           <div className="mt-8 space-y-4 max-w-2xl">
             {[
               "Consistent schedule — same day, same tech, every week",
-              "Owner-operated — Kevin oversees every account",
+              "Trained crew, dedicated route techs — consistent service you can count on",
               "Digital reports — see exactly what was done after each visit",
               "No contracts — month-to-month service, cancel anytime",
               "Local — we live and work in Eastern Suffolk",
