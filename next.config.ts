@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
       { source: "/customer-reviews", destination: "/testimonials", permanent: true },
       { source: "/reviews", destination: "/testimonials", permanent: true },
 
+      // Wix's post-contact-form confirmation page. This site shows an inline
+      // success state on /contact instead of a separate route.
+      { source: "/thank-you", destination: "/contact", permanent: true },
+
       // Retired paths from the old Wix site go here as we confirm them from the
       // 301 map. Add as { source, destination, permanent: true }.
       // e.g. { source: "/old-path", destination: "/new-path", permanent: true },
