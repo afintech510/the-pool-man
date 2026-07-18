@@ -23,11 +23,39 @@ export function Certifications() {
                 className="h-12 sm:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
               />
             ))}
+            <a
+              href="https://www.bbb.org/us/ny/center-moriches/profile/pool-supplies/the-pool-man-0121-79455"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View The Pool Man's BBB Business Profile"
+            >
+              <Image
+                src="/images/cert-bbb.svg"
+                alt="Better Business Bureau"
+                width={150}
+                height={95}
+                className="h-12 sm:h-14 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-600">
-            <span className="flex items-center gap-1">
+            <a
+              href="https://www.bbb.org/us/ny/center-moriches/profile/pool-supplies/the-pool-man-0121-79455"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 hover:text-slate-900"
+            >
               <span className="text-blue-700 font-bold">BBB</span> A+ Rating
-            </span>
+            </a>
+            <span>&middot;</span>
+            <a
+              href="https://moricheschamber.org/member/the-pool-man/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-900"
+            >
+              Proud Member — Moriches Chamber of Commerce
+            </a>
             <span>&middot;</span>
             <span>HomeAdvisor 10+ Years</span>
             <span>&middot;</span>

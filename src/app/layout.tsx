@@ -59,7 +59,14 @@ const localBusinessJsonLd = {
   sameAs: [
     "https://www.facebook.com/kevinthepoolmanconstruction",
     "https://www.instagram.com/kevincherwinski",
+    "https://www.bbb.org/us/ny/center-moriches/profile/pool-supplies/the-pool-man-0121-79455",
+    "https://moricheschamber.org/member/the-pool-man/",
   ],
+  memberOf: {
+    "@type": "Organization",
+    name: "Moriches Chamber of Commerce",
+    url: "https://moricheschamber.org/member/the-pool-man/",
+  },
 };
 
 export default function RootLayout({
