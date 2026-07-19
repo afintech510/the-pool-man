@@ -24,6 +24,7 @@ const navigation = [
     href: "/installation",
     children: [
       { label: "Pool Heaters", href: "/pool-heaters" },
+      { label: "Heater Installation", href: "/pool-heaters/heater-installation" },
       { label: "Salt Water Systems", href: "/installation/salt-water-systems" },
       { label: "Pump Installations", href: "/installation/pumps" },
       { label: "LED Lighting", href: "/installation/led-lighting" },

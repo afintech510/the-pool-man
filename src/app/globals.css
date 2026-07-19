@@ -43,3 +43,34 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Article body styling for blog posts (no typography plugin installed). */
+.blog-content > p {
+  margin-top: 1.25rem;
+  color: var(--color-slate-600, #475569);
+  line-height: 1.75;
+}
+.blog-content > h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: var(--color-slate-900, #0f172a);
+}
+.blog-content > ul {
+  margin-top: 1.25rem;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+  color: var(--color-slate-600, #475569);
+}
+.blog-content > ul > li {
+  margin-top: 0.5rem;
+  line-height: 1.7;
+}
+.blog-content strong {
+  font-weight: 600;
+  color: var(--color-slate-900, #0f172a);
+}
+.blog-content em {
+  font-style: italic;
+}

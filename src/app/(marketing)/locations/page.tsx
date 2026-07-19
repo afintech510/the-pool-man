@@ -1,8 +1,13 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
+import { serviceAreas } from "@/lib/service-areas";
+
+// Towns that have their own dedicated /locations/[slug] page (batch 1).
+const townsWithPages = new Set(serviceAreas.map((area) => area.slug));
 
 export const metadata = pageSeo({
   title: "Service Area — Eastern Suffolk County",
@@ -30,9 +35,12 @@ const towns = [
   { name: "Patchogue", slug: "patchogue" },
 ];
 
+const locationsJsonLd = breadcrumbJsonLd("/locations");
+
 export default function LocationsPage() {
   return (
     <>
+      <JsonLd data={locationsJsonLd} />
       <PageHero
         eyebrow="Service Area"
         title="Proudly serving Eastern Suffolk County"
@@ -45,49 +53,72 @@ export default function LocationsPage() {
           description="Weekly maintenance, liner installation, heater service, and all pool services available in these communities."
         />
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {towns.map((town) => (
-            <div
-              key={town.slug}
-              className={`rounded-lg border p-4 ${
-                town.primary
-                  ? "border-pool-300 bg-pool-50"
-                  : "border-slate-200 bg-white"
-              }`}
-            >
-              <p
-                className={`font-medium ${
-                  town.primary ? "text-pool-700" : "text-slate-900"
+          {towns.map((town) => {
+            const hasPage = townsWithPages.has(town.slug);
+            return (
+              <div
+                key={town.slug}
+                className={`rounded-lg border p-4 ${
+                  town.primary
+                    ? "border-pool-300 bg-pool-50"
+                    : "border-slate-200 bg-white"
                 }`}
               >
-                {town.name}
-              </p>
-              {town.primary && (
-                <p className="text-xs text-pool-600 mt-0.5">Home base</p>
-              )}
-              <div className="mt-2 flex flex-wrap gap-1">
-                <Link
-                  href="/services"
-                  className="text-xs text-slate-500 hover:text-pool-600"
-                >
-                  Service
-                </Link>
-                <span className="text-xs text-slate-700">|</span>
-                <Link
-                  href="/vinyl-liners"
-                  className="text-xs text-slate-500 hover:text-pool-600"
-                >
-                  Liners
-                </Link>
-                <span className="text-xs text-slate-700">|</span>
-                <Link
-                  href="/pool-heaters"
-                  className="text-xs text-slate-500 hover:text-pool-600"
-                >
-                  Heaters
-                </Link>
+                {hasPage ? (
+                  <Link
+                    href={`/locations/${town.slug}`}
+                    className={`font-medium hover:underline ${
+                      town.primary ? "text-pool-700" : "text-slate-900 hover:text-pool-700"
+                    }`}
+                  >
+                    {town.name}
+                  </Link>
+                ) : (
+                  <p
+                    className={`font-medium ${
+                      town.primary ? "text-pool-700" : "text-slate-900"
+                    }`}
+                  >
+                    {town.name}
+                  </p>
+                )}
+                {town.primary && (
+                  <p className="text-xs text-pool-600 mt-0.5">Home base</p>
+                )}
+                {hasPage ? (
+                  <Link
+                    href={`/locations/${town.slug}`}
+                    className="mt-2 inline-block text-xs font-medium text-pool-600 hover:text-pool-700"
+                  >
+                    View {town.name} services &rarr;
+                  </Link>
+                ) : (
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    <Link
+                      href="/services"
+                      className="text-xs text-slate-500 hover:text-pool-600"
+                    >
+                      Service
+                    </Link>
+                    <span className="text-xs text-slate-700">|</span>
+                    <Link
+                      href="/vinyl-liners"
+                      className="text-xs text-slate-500 hover:text-pool-600"
+                    >
+                      Liners
+                    </Link>
+                    <span className="text-xs text-slate-700">|</span>
+                    <Link
+                      href="/pool-heaters"
+                      className="text-xs text-slate-500 hover:text-pool-600"
+                    >
+                      Heaters
+                    </Link>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 

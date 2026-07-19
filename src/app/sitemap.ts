@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
+import { serviceAreas } from "@/lib/service-areas";
+import { blogPosts } from "@/lib/blog";
 
 /**
  * Every indexable page on the site. The brief's original 4-URL list was written
@@ -17,6 +19,7 @@ const routes: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/our-work", priority: 0.9, changeFrequency: "monthly" },
   { path: "/vinyl-liners", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pool-heaters", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/pool-heaters/heater-installation", priority: 0.8, changeFrequency: "monthly" },
   { path: "/pool-heaters/gas-heaters", priority: 0.7, changeFrequency: "monthly" },
   { path: "/pool-heaters/heat-pumps", priority: 0.7, changeFrequency: "monthly" },
   { path: "/pool-heaters/heater-repair", priority: 0.7, changeFrequency: "monthly" },
@@ -26,7 +29,20 @@ const routes: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: "/installation/pumps", priority: 0.7, changeFrequency: "monthly" },
   { path: "/installation/led-lighting", priority: 0.7, changeFrequency: "monthly" },
   { path: "/locations", priority: 0.8, changeFrequency: "monthly" },
+  // Per-town service-area pages, generated from the service-areas data.
+  ...serviceAreas.map((area) => ({
+    path: `/locations/${area.slug}`,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  })),
   { path: "/emergency", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  // Blog posts, generated from the blog data.
+  ...blogPosts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    priority: 0.6,
+    changeFrequency: "monthly" as const,
+  })),
   { path: "/shop", priority: 0.7, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.7, changeFrequency: "monthly" },
   { path: "/testimonials", priority: 0.7, changeFrequency: "monthly" },

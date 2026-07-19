@@ -1,4 +1,5 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ButtonLink } from "@/components/ui/button";
@@ -92,29 +93,69 @@ const emergencyServices = [
   },
 ];
 
+// Source of truth for the on-page FAQ — reused by the FAQPage schema. Written
+// to capture "emergency pool repair near me" and town-level urgent searches.
+const emergencyFaqs = [
+  {
+    q: "Do you offer emergency pool repair near me in Suffolk County?",
+    a: "Yes. We're based in Center Moriches and respond fast to emergency pool calls across Eastern Suffolk County's South Shore — including Moriches, East Moriches, Eastport, and the surrounding towns. Call (631) 878-7796 and we'll get to you as quickly as we can.",
+  },
+  {
+    q: "My pool turned green overnight — how fast can you help?",
+    a: "Green pools are one of our most common emergency calls. We respond fast, shock and treat the water, vacuum and brush, and clean the filter. Depending on how severe the algae bloom is, it's either a single visit or a short multi-day recovery.",
+  },
+  {
+    q: "I have a pool leak — what should I do?",
+    a: "If you're losing water fast, call us right away at (631) 878-7796. We do leak detection and repair on plumbing and equipment. The sooner we catch it, the less risk of equipment damage and wasted water.",
+  },
+  {
+    q: "When should I call for emergency service instead of waiting?",
+    a: "Call immediately for an active leak, a smoking or sparking pump, a gas smell near the heater, or any electrical hazard. Call the same day for a green pool, a pump that won't start, a dead heater, or post-storm damage. The longer these sit, the more they cost to fix.",
+  },
+];
+
+const emergencyJsonLd = [
+  serviceJsonLd({
+    serviceType: "Emergency Pool Service",
+    description:
+      "Fast-response emergency pool service — green pool recovery, filter and heater repair, pump failures, leaks, and storm cleanup — across Center Moriches and Eastern Suffolk County, NY.",
+  }),
+  breadcrumbJsonLd("/emergency"),
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: emergencyFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  },
+];
+
 export default function EmergencyPage() {
   return (
     <>
+      <JsonLd data={emergencyJsonLd} />
       {/* Urgent hero */}
       <section className="bg-gradient-to-br from-red-900 via-red-800 to-pool-900 py-16 sm:py-20">
         <Container>
           <div className="max-w-3xl">
-            <p className="text-sm font-bold text-red-900 uppercase tracking-wide">
+            <p className="text-sm font-bold text-sun-300 uppercase tracking-wide">
               Emergency Pool Services
             </p>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
               Pool emergency?{" "}
-              <span className="text-sun-600">We&apos;re on it.</span>
+              <span className="text-sun-400">We&apos;re on it.</span>
             </h1>
             <p className="mt-5 text-lg text-red-100 leading-relaxed">
               Green pool, equipment failure, active leak, heater down — don&apos;t
               wait for your regular service day. Call Kevin directly for fast
-              response emergency pool service in Suffolk County.
+              response emergency pool repair near you in Suffolk County.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:+16318787796"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-900 bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors shadow-lg"
               >
                 Call Now: (631) 878-7796
               </a>
@@ -122,7 +163,7 @@ export default function EmergencyPage() {
                 href="/booking"
                 variant="outline"
                 size="lg"
-                className="border-white/40 text-slate-900 hover:bg-white/10"
+                className="border-white/40 text-white hover:bg-white/10"
               >
                 Book Online
               </ButtonLink>
@@ -147,7 +188,7 @@ export default function EmergencyPage() {
                 <h3 className="text-lg font-bold text-slate-900">
                   {service.name}
                 </h3>
-                <span className="flex-shrink-0 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-900/50 text-red-900">
+                <span className="flex-shrink-0 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800">
                   {service.urgency}
                 </span>
               </div>
@@ -213,11 +254,26 @@ export default function EmergencyPage() {
         </div>
       </section>
 
+      {/* Local intent FAQ — captures "near me" and town-level emergency searches */}
+      <Section>
+        <SectionHeader title="Emergency pool repair — quick answers" />
+        <div className="mt-8 max-w-3xl space-y-6">
+          {emergencyFaqs.map((faq) => (
+            <div key={faq.q}>
+              <h3 className="font-semibold text-slate-900">{faq.q}</h3>
+              <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* CTA */}
       <section className="bg-pool-600 py-16">
         <Container>
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
               Don&apos;t wait — call Kevin now
             </h2>
             <p className="mt-3 text-lg text-pool-100 max-w-2xl mx-auto">
@@ -228,7 +284,7 @@ export default function EmergencyPage() {
             <div className="mt-8">
               <a
                 href="tel:+16318787796"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-pool-600 bg-white hover:bg-pool-50 rounded-lg transition-colors shadow-lg"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-pool-700 bg-white hover:bg-pool-50 rounded-lg transition-colors shadow-lg"
               >
                 (631) 878-7796
               </a>

@@ -1,4 +1,5 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { CtaBanner } from "@/components/marketing/cta-banner";
@@ -10,9 +11,50 @@ export const metadata = pageSeo({
   path: "/services/openings-closings",
 });
 
+// Source of truth for the on-page FAQ — reused by the FAQPage schema. Written
+// around seasonal search intent ("pool opening Long Island", "when to close a
+// pool Suffolk County") that spikes in spring and fall.
+const seasonalFaqs = [
+  {
+    q: "When should I open my pool on Long Island?",
+    a: "Most Suffolk County homeowners open in April or early May, once overnight temperatures are consistently above freezing and you want the water swim-ready for the season. Opening a bit earlier also lets the filter clear the water before you actually want to swim. Book early — spring opening spots fill fast.",
+  },
+  {
+    q: "When should I close my pool for the season?",
+    a: "Typically September into October, before the first hard freeze. Closing while the water is still cool (but before it gets cold) helps you lock in balanced chemistry for the winter. Waiting too long risks freeze damage to your plumbing and equipment.",
+  },
+  {
+    q: "How long does a pool opening or closing take?",
+    a: "A closing is usually a few hours. An opening is quick on-site, but the water often needs about a week of filtering and balancing before it's crystal clear and ready to swim — which is why we ask for roughly two weeks' notice in spring.",
+  },
+  {
+    q: "Why does a proper closing matter so much?",
+    a: "Cutting corners on winterization leads to freeze-cracked plumbing, algae blooms, and equipment failures that surface in spring. We blow out every line, winterize every piece of equipment, and use quality chemicals — so your pool opens faster and cleaner next year.",
+  },
+];
+
+const openingsClosingsJsonLd = [
+  serviceJsonLd({
+    serviceType: "Pool Opening and Closing",
+    description:
+      "Seasonal pool opening and winterization service — line blowouts, equipment startup and shutdown, and cover handling — across Center Moriches and Eastern Suffolk County, NY.",
+  }),
+  breadcrumbJsonLd("/services/openings-closings"),
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: seasonalFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  },
+];
+
 export default function OpeningsClosingsPage() {
   return (
     <>
+      <JsonLd data={openingsClosingsJsonLd} />
       <PageHero
         eyebrow="Seasonal Services"
         title="Pool openings & winterization"
@@ -83,6 +125,20 @@ export default function OpeningsClosingsPage() {
           </p>
         </div>
       </section>
+
+      <Section>
+        <SectionHeader title="Pool opening & closing FAQs" />
+        <div className="mt-8 max-w-3xl space-y-6">
+          {seasonalFaqs.map((faq) => (
+            <div key={faq.q}>
+              <h3 className="font-semibold text-slate-900">{faq.q}</h3>
+              <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
       <CtaBanner
         title="Schedule your opening or closing"

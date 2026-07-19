@@ -1,4 +1,5 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/marketing/service-card";
@@ -11,13 +12,25 @@ export const metadata = pageSeo({
   path: "/pool-heaters",
 });
 
+const poolHeatersJsonLd = [
+  serviceJsonLd({
+    serviceType: "Pool Heater Sales, Installation, and Repair",
+    description:
+      "Pool heater sales, installation, repair, and replacement — heat pumps and gas heaters — across Center Moriches and Eastern Suffolk County, NY.",
+  }),
+  breadcrumbJsonLd("/pool-heaters"),
+];
+
 export default function PoolHeatersPage() {
   return (
     <>
+      <JsonLd data={poolHeatersJsonLd} />
       <PageHero
         eyebrow="Pool Heaters"
         title="Swim longer, swim warmer"
         description="Don't let cold water cut your season short. We sell, install, and service pool heaters — from efficient heat pumps to powerful gas units. Extend your season from April through October."
+        secondaryCtaText="Heater Installation Details"
+        secondaryCtaHref="/pool-heaters/heater-installation"
       />
 
       <Section>

@@ -17,12 +17,14 @@ const footerLinks = {
   ],
   installation: [
     { label: "Pool Heaters", href: "/pool-heaters" },
+    { label: "Heater Installation", href: "/pool-heaters/heater-installation" },
     { label: "Salt Water Systems", href: "/installation/salt-water-systems" },
     { label: "Pump Installation", href: "/installation/pumps" },
     { label: "LED Lighting", href: "/installation/led-lighting" },
   ],
   company: [
     { label: "Service Area", href: "/locations" },
+    { label: "Blog", href: "/blog" },
     { label: "Emergency", href: "/emergency" },
     { label: "Shop", href: "/shop" },
     { label: "FAQ", href: "/faq" },
