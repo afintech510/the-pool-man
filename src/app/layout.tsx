@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/json-ld";
 import { GoogleTags } from "@/components/analytics/google-tags";
+import { CallConversion } from "@/components/analytics/call-conversion";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 
 const geistSans = Geist({
@@ -108,6 +109,7 @@ export default function RootLayout({
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-slate-900">
         <GoogleTags />
+        <CallConversion />
         <JsonLd data={[localBusinessJsonLd, organizationJsonLd]} />
         {children}
       </body>
