@@ -4,6 +4,18 @@ function getClient() {
   return new BrevoClient({ apiKey: process.env.BREVO_API_KEY! });
 }
 
+/**
+ * The From address for website-originated mail. Sent from a DEDICATED sending
+ * subdomain (sender.kevinthepoolman.com) authenticated in Brevo, kept separate
+ * from the Microsoft 365 corporate mail on the root domain so sending reputation
+ * is isolated. Overridable via env without a redeploy. replyTo is always set to
+ * the visitor, so this mailbox never needs to receive mail.
+ */
+const SENDER = {
+  email: process.env.BREVO_SENDER_EMAIL || "noreply@sender.kevinthepoolman.com",
+  name: process.env.BREVO_SENDER_NAME || "The Pool Man Website",
+};
+
 export async function sendTransactionalEmail(params: {
   to: { email: string; name?: string };
   templateId: number;
@@ -47,7 +59,7 @@ export async function sendContactNotification(params: {
   </div>`;
 
   return client.transactionalEmails.sendTransacEmail({
-    sender: { email: "info@kevinthepoolman.com", name: "The Pool Man Website" },
+    sender: SENDER,
     to: [
       { email: "info@kevinthepoolman.com" },
       { email: "office@kevinthepoolman.com" },
