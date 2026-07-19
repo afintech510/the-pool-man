@@ -1,7 +1,9 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { CalcomEmbed } from "@/components/marketing/calcom-embed";
+import { BookingConversion } from "@/components/analytics/booking-conversion";
 import { WaveBackground } from "@/components/ui/wave-bg";
 
 export const metadata = pageSeo({
@@ -11,9 +13,13 @@ export const metadata = pageSeo({
   path: "/booking",
 });
 
+const bookingJsonLd = breadcrumbJsonLd("/booking");
+
 export default function BookingPage() {
   return (
     <>
+      <JsonLd data={bookingJsonLd} />
+      <BookingConversion />
       <section className="relative bg-pool-950 py-12 sm:py-16 overflow-hidden">
         <WaveBackground />
         <Container className="relative">

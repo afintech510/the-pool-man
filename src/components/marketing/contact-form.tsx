@@ -1,8 +1,9 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContactForm, type ContactState } from "@/app/(marketing)/contact/actions";
+import { reportConversionByLabel } from "@/lib/gtag";
 
 const initialState: ContactState = { ok: false };
 
@@ -25,6 +26,14 @@ const inputClass =
 export function ContactForm() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
   const v = state.values;
+
+  // Fire the Google Ads conversion only after the server action reports a
+  // successful save. No-op unless NEXT_PUBLIC_ADS_LABEL_CONTACT is set at build.
+  useEffect(() => {
+    if (state.ok) {
+      reportConversionByLabel(process.env.NEXT_PUBLIC_ADS_LABEL_CONTACT);
+    }
+  }, [state.ok]);
 
   if (state.ok) {
     return (

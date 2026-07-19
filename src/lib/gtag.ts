@@ -46,3 +46,17 @@ export function reportConversion(conversionLabel: string, params?: Record<string
     ...params,
   });
 }
+
+/**
+ * Same as `reportConversion`, but tolerant of an unset label. Conversion labels
+ * live in their own `NEXT_PUBLIC_ADS_LABEL_*` env vars (inlined at build time),
+ * so a build without them configured passes `undefined` here — in which case we
+ * simply do nothing. Keeps call sites free of `if (label)` boilerplate.
+ */
+export function reportConversionByLabel(
+  label: string | undefined,
+  params?: Record<string, unknown>,
+) {
+  if (!label) return;
+  reportConversion(label, params);
+}
