@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/json-ld";
+import { GoogleTags } from "@/components/analytics/google-tags";
 import { SITE_URL, SITE_NAME } from "@/lib/seo";
 
 const geistSans = Geist({
@@ -18,6 +19,12 @@ export const metadata: Metadata = {
     "Eastern Suffolk's trusted pool service company. Weekly maintenance, vinyl liner installation, pool heater sales & repair. Serving Center Moriches and surrounding towns.",
   metadataBase: new URL(SITE_URL),
   alternates: { canonical: "/" },
+  // Google Search Console verification. Set GOOGLE_SITE_VERIFICATION to the
+  // token from the "HTML tag" verification method to render the meta tag.
+  // (DNS verification at Cloudflare is an alternative and needs no code.)
+  ...(process.env.GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } }
+    : {}),
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -41,6 +48,7 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: "+1-631-878-7796",
   email: "info@kevinthepoolman.com",
+  priceRange: "$$",
   image: `${SITE_URL}/images/logo-new.png`,
   address: {
     "@type": "PostalAddress",
@@ -69,6 +77,28 @@ const localBusinessJsonLd = {
   },
 };
 
+// Sitewide Organization structured data (brand-level, complements LocalBusiness).
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/logo-new.png`,
+  description:
+    "Family-owned pool construction and service company serving Center Moriches and Eastern Suffolk County, NY for over 30 years.",
+  sameAs: [
+    "https://www.facebook.com/kevinthepoolmanconstruction",
+    "https://www.instagram.com/kevincherwinski",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-631-878-7796",
+    contactType: "customer service",
+    areaServed: "US-NY",
+    availableLanguage: "English",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,7 +107,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-slate-900">
-        <JsonLd data={localBusinessJsonLd} />
+        <GoogleTags />
+        <JsonLd data={[localBusinessJsonLd, organizationJsonLd]} />
         {children}
       </body>
     </html>
