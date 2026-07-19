@@ -2,7 +2,7 @@ import { pageSeo, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
-import { CalcomEmbed } from "@/components/marketing/calcom-embed";
+import { BookingEmbed } from "@/components/marketing/booking-embed";
 import { BookingConversion } from "@/components/analytics/booking-conversion";
 import { WaveBackground } from "@/components/ui/wave-bg";
 
@@ -38,7 +38,7 @@ export default function BookingPage() {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2 min-h-[600px]">
-            <CalcomEmbed calLink="kevin-the-pool-man/pool-consultation" />
+            <BookingEmbed calLink="kevin-the-pool-man/pool-consultation" />
           </div>
 
           <div>
