@@ -80,25 +80,25 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
       <Container>
-        <div className="flex items-center justify-between h-18 lg:h-20">
-          <Link href="/" className="flex items-center">
+        <div className="grid grid-cols-[auto_1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center h-18 lg:h-20">
+          <Link href="/" className="col-start-1 flex items-center relative z-10 justify-self-start">
             <Image
               src="/images/logo-new.png"
               alt="The Pool Man"
               width={160}
               height={80}
-              className="h-12 w-auto"
+              className="h-20 w-auto lg:h-28 shrink-0"
               priority
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="col-start-2 hidden lg:flex items-center gap-6 justify-self-center">
             {navigation.map((item) => (
               <NavItem key={item.href} item={item} />
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="col-start-3 hidden lg:flex items-center gap-3 justify-self-end">
             <a
               href="tel:+16318787796"
               className="text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors"
@@ -113,7 +113,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900"
+            className="col-start-3 justify-self-end lg:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900"
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
