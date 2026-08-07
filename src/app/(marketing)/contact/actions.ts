@@ -39,7 +39,10 @@ export async function submitContactForm(
     const [firstName, ...rest] = name.split(" ");
     const { data: contactId, error: rErr } = await supabase.rpc("resolve_contact", {
       p_email: email,
-      p_phone: phone || "",
+      // Pass undefined (→ SQL NULL), not "". An empty string is not null, so it
+      // slips past the `phone_e164 is not null` partial unique index and collapses
+      // every phone-less lead onto one shared contact.
+      p_phone: phone || undefined,
       p_first: firstName || undefined,
       p_last: rest.join(" ") || undefined,
     });
