@@ -28,12 +28,18 @@ export function ContactForm() {
   const v = state.values;
 
   // Fire the Google Ads conversion only after the server action reports a
-  // successful save. No-op unless NEXT_PUBLIC_ADS_LABEL_CONTACT is set at build.
+  // genuine save — NOT the honeypot path (state.bot), which returns ok:true to
+  // fool bots but saves no lead. Pass the entered email/phone for enhanced
+  // conversions. No-op unless NEXT_PUBLIC_ADS_LABEL_CONTACT is set at build.
   useEffect(() => {
-    if (state.ok) {
-      reportConversionByLabel(process.env.NEXT_PUBLIC_ADS_LABEL_CONTACT);
+    if (state.ok && !state.bot) {
+      reportConversionByLabel(
+        process.env.NEXT_PUBLIC_ADS_LABEL_CONTACT,
+        undefined,
+        state.ec,
+      );
     }
-  }, [state.ok]);
+  }, [state.ok, state.bot, state.ec]);
 
   if (state.ok) {
     return (

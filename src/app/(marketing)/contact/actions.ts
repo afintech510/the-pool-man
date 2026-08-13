@@ -7,6 +7,12 @@ export type ContactState = {
   ok: boolean;
   error?: string;
   values?: { name: string; email: string; phone: string; message: string };
+  // Honeypot success: we return ok:true to fool the bot, but this flag tells the
+  // client NOT to fire a conversion (no real lead was saved).
+  bot?: boolean;
+  // Enhanced-conversion user data for a genuine lead — the client passes this to
+  // gtag so Google can match the conversion to the ad click.
+  ec?: { email: string; phone?: string };
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,7 +31,7 @@ export async function submitContactForm(
 
   const values = { name, email, phone, message };
 
-  if (trap) return { ok: true, values: EMPTY };
+  if (trap) return { ok: true, values: EMPTY, bot: true };
   if (!name || !email || !message)
     return { ok: false, error: "Please fill in your name, email, and a message.", values };
   if (!EMAIL_RE.test(email))
@@ -82,5 +88,5 @@ export async function submitContactForm(
     };
   }
 
-  return { ok: true, values: EMPTY };
+  return { ok: true, values: EMPTY, ec: { email, phone: phone || undefined } };
 }

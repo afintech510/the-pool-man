@@ -314,13 +314,14 @@ around a thank-you URL.
   primary would train bidding on page views, not leads.
 
 ### Watch items
-- **Honeypot fires a conversion.** The server returns `ok:true` on a tripped honeypot
-  (to fool bots) — which also triggers the client conversion event, with **no lead saved**.
-  A JS-executing bot could inflate the Contact conversion above actual leads. If
-  conversions consistently exceed Supabase leads, this is why; consider returning a
-  distinct non-`ok` state for the honeypot path, or reconcile against the leads table.
-- **Enhanced conversions** aren't implemented in code (no hashed user data passed). Enable
-  via Google's automatic/tag-based method in the Ads UI if wanted; don't assume the code does it.
+- **Honeypot conversion — FIXED.** The server now marks the honeypot path with `bot:true`
+  and the client skips the conversion for it (only genuine, Supabase-saved leads fire).
+- **Enhanced conversions — implemented in code.** The contact form now passes the entered
+  email/phone to gtag (`user_data`), which normalizes + hashes them client-side. **You must
+  still turn enhanced conversions ON** for the account/action in the Ads UI (Goals →
+  Conversions → Settings → Enhanced conversions → Google tag) and accept the terms — the
+  code supplies the data but the toggle activates matching. Booking/call conversions carry
+  no user data (Cal.com is a cross-origin iframe; tel-clicks have none).
 - `tel:` click ≠ a completed call — it's a click-to-call intent. The real answered-call
   metric is the separate "Calls from ads" (60s) action.
 
