@@ -136,6 +136,23 @@ Renovations / Financing. Callouts: Licensed & Insured, 30+ Years, CBP Certified,
 
 ---
 
+## Product/service category tags (setup wizard field — max 20)
+
+Short category-style phrases, NOT full keywords. Residential + inground only.
+Do NOT keep "Commercial & General Contracting" — it mismatches residential intent.
+
+**Campaign 1 — Service & Repair:** Home Swimming Pools, Saunas & Spas; Pool Contractor;
+Pool Cleaning Service; Swimming Pool Maintenance; Pool Opening & Closing; Pool
+Winterization; Pool Repair Service; Pool Pump Repair; Pool Heater Repair; Vinyl Pool
+Liner Replacement; Salt Water Pool Service; Pool Equipment Service.
+
+**Campaign 2 — Construction & Renovation:** Home Swimming Pools, Saunas & Spas; Pool
+Contractor; Home Improvement & Maintenance; Inground Pool Builder; Swimming Pool
+Construction; Gunite Pool Contractor; Vinyl Inground Pool; Pool Renovation; Pool
+Resurfacing; Pool Remodeling; Spa & Hot Tub Installation; Pool Deck & Coping.
+
+---
+
 ## Negative keywords (shared list — apply to both campaigns)
 
 above ground, jobs, hiring, salary, careers, diy, how to, kit, intex, doughboy,
