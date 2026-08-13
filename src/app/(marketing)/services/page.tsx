@@ -1,4 +1,5 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { ServiceCard } from "@/components/marketing/service-card";
@@ -11,15 +12,25 @@ export const metadata = pageSeo({
   path: "/services",
 });
 
+const servicesJsonLd = [
+  serviceJsonLd({
+    serviceType: "Pool Cleaning and Maintenance",
+    description:
+      "Weekly pool maintenance, seasonal openings and closings, pool covers, and repairs across Center Moriches and Eastern Suffolk County, NY.",
+  }),
+  breadcrumbJsonLd("/services"),
+];
+
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={servicesJsonLd} />
       <PageHero
         eyebrow="Our Services"
         title="Complete pool care, done right"
         description="From weekly chemical balancing to equipment repair, we handle every aspect of pool maintenance. Owner-operated quality for Eastern Suffolk County homeowners."
-        secondaryCtaText="Call (631) 555-1234"
-        secondaryCtaHref="tel:+16315551234"
+        secondaryCtaText="Call (631) 878-7796"
+        secondaryCtaHref="tel:+16318787796"
       />
 
       <Section>
