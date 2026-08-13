@@ -153,6 +153,51 @@ Resurfacing; Pool Remodeling; Spa & Hot Tub Installation; Pool Deck & Coping.
 
 ---
 
+## "What products/services are you advertising?" (wizard free-text field)
+
+Scope each answer to that campaign only. Residential + inground only.
+
+**Campaign 1 — Service & Repair:**
+> Residential pool maintenance and repair services on the South Shore of Eastern Suffolk
+> County. Weekly pool cleaning and chemical balancing, seasonal pool openings and
+> closings/winterization, equipment repair (pumps, filters, heaters, plumbing, leaks),
+> vinyl liner replacement, salt system and heater service, and green-pool recovery.
+> Inground pools only.
+
+**Campaign 2 — Construction & Renovation:**
+> Custom residential inground pool construction and renovation on the South Shore of
+> Eastern Suffolk County. New gunite and vinyl inground pool design and build, pool and
+> spa construction, and full renovations — resurfacing, new vinyl liners, tile/coping/
+> decking, LED lighting, and equipment upgrades. Financing available.
+
+---
+
+## Search themes (Smart-mode wizard field — up to 50)
+
+Phrases people would search. Keep the set tight and high-intent; padding to 50 hurts
+performance. If Google suggests commercial or above-ground themes, skip them.
+
+**Campaign 1 — Service & Repair:**
+pool cleaning service, weekly pool maintenance, pool service near me, pool company
+near me, pool opening service, pool closing service, pool winterization, open my pool,
+pool repair, pool pump repair, pool filter repair, pool leak repair, pool heater repair,
+green pool cleanup, salt water pool service, vinyl pool liner replacement.
+
+**Campaign 2 — Construction & Renovation:**
+inground pool builder, pool builder near me, swimming pool construction, gunite pool
+builder, concrete pool installation, vinyl inground pool installation, new pool
+installation cost, build a pool Long Island, pool contractor Suffolk County, pool
+renovation, pool remodeling, pool resurfacing, pool deck and coping replacement, replace
+pool liner, update old pool, pool and spa builder, inground hot tub installation, salt
+water pool conversion.
+
+> Note: "Search themes" appear in Google's **Smart** campaign mode, which also opts you
+> into Display/YouTube and hides network + location-precision controls. Prefer **Expert
+> Mode** (uses real keywords + match types) when you can; if you launch in Smart mode,
+> tighten it after week one.
+
+---
+
 ## Negative keywords (shared list — apply to both campaigns)
 
 above ground, jobs, hiring, salary, careers, diy, how to, kit, intex, doughboy,
