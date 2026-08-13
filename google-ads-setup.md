@@ -1,240 +1,285 @@
-# Google Ads Setup — The Pool Man (Kevin the Pool Man)
+# Google Ads Setup — The Pool Man (Tactical Companion)
 
-Working playbook for setting up and running Google Ads. All copy below is supported by
-facts documented on kevinthepoolman.com. Owner: Kevin Cherwinski. Base: Center Moriches, NY.
-Real phone: **(631) 878-7796**. Never use the old placeholder 555-1234.
+**Companion to the BenchworksAI LSA + Google Ads strategy doc (F-020 / F-015).**
+That doc owns the *strategy* (platform state, LSA, sequencing, economics, blockers).
+This doc owns the *tactics* — exactly what to type into each wizard field, per campaign.
+Where the two ever disagree, the strategy doc wins.
 
-Business: owner-operated, residential inground pools only (no above-ground). 30+ years.
-Licensed & insured (confirmed by owner). CBP Certified Builder, NESPA/NPC certified,
-LIPSA Gold Award, BBB A+, HomeAdvisor screened. Google rating 4.4.
-
----
-
-## Account structure — two campaigns, separate budgets
-
-Service and construction have completely different economics. Keep them apart.
-
-| | Campaign 1: Service & Repair | Campaign 2: Construction & Renovation |
-|---|---|---|
-| Landing page | `/services` or `/booking` | `/construction` |
-| Lead value | Low–mid, recurring, high volume | Very high-ticket, low volume, long cycle |
-| CPC | Lower | High ($8–$20+ on Long Island) |
-| Seasonality | Peaks Mar–May & Sep–Oct | Spring–summer |
-| Financing angle | No | Yes — HFS, rates from 2.99% |
-
-If budget is tight: run Campaign 1 first; enable Campaign 2 in spring on a separate cap.
+Business facts (from kevinthepoolman.com): The Pool Man / legal "Kevin the Pool Man",
+owner Kevin Cherwinski. 110 Frowein Rd, Center Moriches, NY 11934. **Phone (631) 878-7796.**
+Residential inground pools only — **above-ground is NOT serviced** (hard negative). 30+ years.
+Licensed & insured (confirmed by owner). CBP Certified, NESPA/NPC, LIPSA Gold Award, BBB A+.
+Google rating currently **4.4**.
 
 ---
 
-## "What makes your business unique" (setup wizard field)
+## 0. Read first — architecture & what changed
 
-This field feeds Google's AI copy generation — answer truthfully, don't keyword-stuff.
+**Three paid campaigns, no service/repair campaign.** Weekly-service demand is handled by
+LSA (cleaning category deferred to Skimmer launch per field capacity) + organic — a paid
+service campaign would generate route work Carlos can't absorb this season. Google Ads
+covers the keyword-driven, higher-margin work:
+
+| # | Campaign | Priority | Geography | Notes |
+|---|---|---|---|---|
+| **1** | **Construction (gunite/vinyl)** | **Lead campaign (your call)** | Eastern / Hamptons-adjacent, premium-geo bidding | High margin, long cycle |
+| 2 | Vinyl Liners | Proven, fast close | Full area, western lean | One close ≈ covers month |
+| 3 | Heaters | Shoulder-season timed | Full area | Season-extension play |
+
+**Numbering ≠ launch order.** You asked for Construction as Campaign 1 and it's the
+priority. But the strategy doc recommends *launching the Liner campaign first* to calibrate
+conversion tracking cheaply before spending on expensive construction clicks. Keep
+Construction as #1 in priority; decide launch order separately. Recommended launch
+sequence: **Liners → Construction → Heaters.**
+
+**LSA comes before all of this.** Pay-per-lead, longest verification clock (2–5 wks),
+captures highest-intent "pool company near me." See the strategy doc §4.
+
+**Do NOT build call-only ads** — they're retired (no new ones since Feb 2026). Use
+**Responsive Search Ads + call assets** instead (this doc's ad copy already does).
+
+---
+
+## 1. Pre-launch corrections (close these before building)
+
+1. **Above-ground = OUT.** Your FAQ states it. Hard negative in every campaign, not an open decision.
+2. **Legal name for verification.** Confirm the exact entity name on the Suffolk home-improvement license and the insurance COI, then use that identical string in GBP + LSA + billing. Site schema legal name is "Kevin the Pool Man"; trading name is "The Pool Man." A mismatch stalls verification.
+3. **Verify conversion mechanism against the real build.** The contact server action already fires a Google Ads conversion on submit — confirm whether a `/thank-you` page exists or if it's the action that fires. Wire Cal.com booking + call-asset events to match.
+4. **Spot-check ZIPs before loading** the LSA/geo list — one wrong ZIP = paying for wrong-area leads. 11934 = Center Moriches ✓; verify the rest.
+5. **Rating is 4.4, not 4.5.** Review engine must lift the *average*, not just count.
+6. **Real phone everywhere:** (631) 878-7796. The old placeholder 555-1234 is fixed on the site.
+
+---
+
+## 2. "What makes your business unique" (setup wizard field)
+
+Feeds Google's AI copy generation — answer truthfully, don't keyword-stuff. Business-level
+(same for all campaigns).
 
 **Full:**
 > The Pool Man is an owner-operated pool company serving the South Shore of Eastern
 > Suffolk County, Long Island, from Center Moriches. Owner Kevin Cherwinski has been
 > building, servicing, and repairing residential inground pools for over 30 years. We do
-> it all in-house: weekly maintenance, seasonal openings and closings, repairs, vinyl
-> liners, heaters, salt systems, and full gunite and vinyl pool construction and
-> renovation. What sets us apart is that Kevin is on every job — not a franchise, not a
-> sales team — and he personally answers calls and texts mornings, evenings, and
-> weekends. We're licensed and insured, a CBP Certified Builder, NESPA and NPC certified,
-> LIPSA Gold Award winner, and BBB A+ rated, with honest recommendations and no upselling.
+> it all in-house: full gunite and vinyl pool construction and renovation, vinyl liners,
+> heaters, salt systems, and repairs. What sets us apart is that Kevin is on every job —
+> not a franchise, not a sales team — and he personally answers calls and texts mornings,
+> evenings, and weekends. We're licensed and insured, a CBP Certified Builder, NESPA and
+> NPC certified, LIPSA Gold Award winner, and BBB A+ rated, with honest recommendations
+> and no upselling.
 
 **Short:**
-> Owner-operated pool company in Center Moriches with 30+ years serving Eastern Suffolk
-> County's South Shore. Kevin does it all — weekly service, openings/closings, repairs,
-> liners, heaters, and full pool construction. Licensed & insured, owner on every job,
-> CBP Certified Builder, BBB A+, no upselling.
+> Owner-operated pool company in Center Moriches, 30+ years on Eastern Suffolk County's
+> South Shore. Custom pool construction, renovations, liners, heaters, and repairs.
+> Licensed & insured, owner on every job, CBP Certified, BBB A+, no upselling.
 
 ---
 
-## Service area (targeting)
+## 3. Service area (targeting)
 
-Target a radius around Center Moriches + these towns. Set location option to
-**"Presence: people in or regularly in your targeted locations"** (NOT the default).
+Radius around Center Moriches + these towns. Set location option to **"Presence: people in
+or regularly in your targeted locations"** (NOT the default "presence or interest").
 
 Center Moriches, Moriches, East Moriches, Eastport, Remsenburg, Westhampton,
 Westhampton Beach, Quogue, Hampton Bays, Shirley, Mastic, Mastic Beach, Manorville,
 Brookhaven, Bellport, Patchogue. ("From Patchogue to the Hamptons.")
 
----
+- **Construction (Campaign 1):** eastern / Hamptons-adjacent ZIPs, bid emphasis on premium towns.
+- **Liners / Heaters:** full area; western lean via location bid adjustments once data supports.
 
-## Campaign 1 — Service & Repair
-
-Landing page: `/services` (phone now fixed) or `/booking`.
-
-### Ad groups / keywords (phrase match)
-- **Weekly service:** "pool cleaning service", "weekly pool maintenance", "pool service near me", "pool cleaning [town]"
-- **Openings/Closings:** "pool opening service", "pool closing service", "pool winterization", "open my pool"
-- **Repair:** "pool repair", "pool pump repair", "pool leak repair", "pool heater repair", "green pool cleanup"
-- **Liners:** "vinyl pool liner replacement", "pool liner installation"
-
-### Responsive Search Ad
-Headlines (provide 12–15):
-- Kevin the Pool Man
-- Pool Service in Eastern Suffolk
-- 30+ Years of Pool Experience
-- Owner-Operated — Kevin on Every Job
-- Weekly Pool Maintenance & Repair
-- Pool Openings & Closings
-- Fast Pool Repair — Call Today
-- Licensed & Insured Pool Pros
-- CBP Certified Pool Pro
-- BBB A+ Rated Pool Company
-- Serving the South Shore
-- No Upselling, Honest Service
-- Free On-Site Consultation
-- Not a Franchise. Just Kevin.
-
-Descriptions (provide 4):
-- Owner-operated pool service across Eastern Suffolk County's South Shore. Weekly maintenance, openings, closings, and repairs. Call (631) 878-7796.
-- 30+ years serving Center Moriches to the Hamptons. Kevin answers calls & texts himself — mornings, evenings, weekends. Licensed & insured.
-- CBP Certified, BBB A+ rated. Honest recommendations, no upselling, no contracts. Book a free consultation today.
-- Pump, filter, heater, or liner problem? Same-week service. Trusted South Shore pool pros for over 30 years.
-
-Pin "Kevin the Pool Man" to H1. Assets: call ext (631-878-7796), location, sitelinks
-(Weekly Service / Openings & Closings / Repairs / Booking), callouts (Licensed & Insured,
-30+ Years, CBP Certified, No Upselling).
+Char limits reference: Headlines ≤30 · Long headlines ≤90 · Descriptions ≤90 ·
+Sitelink text ≤25 · Callouts ≤25.
 
 ---
 
-## Campaign 2 — Construction & Renovation
+## Campaign 1 — Construction & Renovation
 
-Landing page: `/construction`. Lead on HFS financing.
+Landing page: `/construction` (never the homepage). Lead on HFS financing.
 
-### Ad groups / keywords (phrase match)
-- **New builds:** "inground pool builder", "pool construction company", "gunite pool builder", "vinyl inground pool", "pool builder near me", "build a pool [town]"
-- **Renovation:** "pool renovation", "pool resurfacing", "pool remodel", "pool deck renovation", "replace pool liner"
-- **Spa/upgrade:** "pool and spa builder", "add spa to pool", "salt water pool conversion", "pool light installation"
+### Search themes (Smart mode) / keywords (Expert mode, phrase match)
+inground pool builder, pool builder near me, swimming pool construction, gunite pool
+builder, concrete pool installation, vinyl inground pool installation, new pool
+installation cost, build a pool Long Island, pool contractor Suffolk County, pool
+renovation, pool remodeling, pool resurfacing, pool deck and coping replacement, replace
+pool liner, pool and spa builder, inground hot tub installation, salt water pool
+conversion.
 
-### Responsive Search Ad
-Headlines:
-- Kevin the Pool Man — Pool Builder
-- Custom Inground Pools
-- 30+ Years Building Pools
-- Gunite & Vinyl Pool Construction
-- CBP Certified Pool Builder
-- Licensed & Insured Pool Builder
-- Pool Renovation & Remodeling
-- Financing Available — Rates from 2.99%
-- Owner on Every Job Site
-- LIPSA Gold Award Winner
-- Serving Eastern Suffolk County
-- Free On-Site Design Consultation
-- BBB A+ Rated Builder
-- Built by Kevin, Not a Franchise
+### Category tags (product/service field)
+Home Swimming Pools, Saunas & Spas; Pool Contractor; Home Improvement & Maintenance;
+Inground Pool Builder; Swimming Pool Construction; Gunite Pool Contractor; Vinyl Inground
+Pool; Pool Renovation; Pool Resurfacing; Spa & Hot Tub Installation; Pool Deck & Coping.
+(Do NOT keep "Commercial & General Contracting.")
 
-Descriptions:
-- Custom gunite & vinyl inground pools across the South Shore of Eastern Suffolk County. 30+ years, owner-operated. Free consultation: (631) 878-7796.
-- Licensed, insured & CBP certified. Kevin is on every job — design, build, and finish. No sales team, no upselling.
-- Renovating an older pool? Resurfacing, new liners, decking, LED lighting & equipment upgrades. Book a free on-site design visit.
-- Financing available through HFS — rates as low as 2.99%, terms up to 20 years, and checking doesn't affect your credit.
-
-Pin "Kevin the Pool Man — Pool Builder" to H1. Sitelinks: Gunite Pools / Vinyl Pools /
-Renovations / Financing. Callouts: Licensed & Insured, 30+ Years, CBP Certified, BBB A+.
-
----
-
-## Product/service category tags (setup wizard field — max 20)
-
-Short category-style phrases, NOT full keywords. Residential + inground only.
-Do NOT keep "Commercial & General Contracting" — it mismatches residential intent.
-
-**Campaign 1 — Service & Repair:** Home Swimming Pools, Saunas & Spas; Pool Contractor;
-Pool Cleaning Service; Swimming Pool Maintenance; Pool Opening & Closing; Pool
-Winterization; Pool Repair Service; Pool Pump Repair; Pool Heater Repair; Vinyl Pool
-Liner Replacement; Salt Water Pool Service; Pool Equipment Service.
-
-**Campaign 2 — Construction & Renovation:** Home Swimming Pools, Saunas & Spas; Pool
-Contractor; Home Improvement & Maintenance; Inground Pool Builder; Swimming Pool
-Construction; Gunite Pool Contractor; Vinyl Inground Pool; Pool Renovation; Pool
-Resurfacing; Pool Remodeling; Spa & Hot Tub Installation; Pool Deck & Coping.
-
----
-
-## "What products/services are you advertising?" (wizard free-text field)
-
-Scope each answer to that campaign only. Residential + inground only.
-
-**Campaign 1 — Service & Repair:**
-> Residential pool maintenance and repair services on the South Shore of Eastern Suffolk
-> County. Weekly pool cleaning and chemical balancing, seasonal pool openings and
-> closings/winterization, equipment repair (pumps, filters, heaters, plumbing, leaks),
-> vinyl liner replacement, salt system and heater service, and green-pool recovery.
-> Inground pools only.
-
-**Campaign 2 — Construction & Renovation:**
+### "What products/services are you advertising?"
 > Custom residential inground pool construction and renovation on the South Shore of
 > Eastern Suffolk County. New gunite and vinyl inground pool design and build, pool and
 > spa construction, and full renovations — resurfacing, new vinyl liners, tile/coping/
 > decking, LED lighting, and equipment upgrades. Financing available.
 
----
+### Headlines (≤30)
+Kevin the Pool Man / Custom Inground Pools / Inground Pool Builder / Gunite & Vinyl Pools /
+30+ Years Building Pools / CBP Certified Builder / Licensed & Insured / Owner on Every Job
+Site / Free Design Consultation / Financing Available / Rates as Low as 2.99% / LIPSA Gold
+Award Winner / BBB A+ Rated Pool Builder / Serving Eastern Suffolk / Built by Kevin, Not a
+Chain
 
-## Search themes (Smart-mode wizard field — up to 50)
+### Long headlines (≤90)
+- Custom Inground Pool Construction on Long Island's South Shore
+- Owner-Operated Pool Builder — 30+ Years in Eastern Suffolk County
+- Gunite & Vinyl Pools, Renovations & Spas — Licensed, Insured & CBP Certified
 
-Phrases people would search. Keep the set tight and high-intent; padding to 50 hurts
-performance. If Google suggests commercial or above-ground themes, skip them.
+### Descriptions (≤90)
+- Custom gunite & vinyl inground pools in Eastern Suffolk County. 30+ years, owner-run.
+- Licensed, insured & CBP certified. Kevin is on every job — no sales team, no upselling.
+- Financing available — rates from 2.99%, up to 20 years. Free on-site design consult.
+- Serving Center Moriches to the Hamptons. Call (631) 878-7796 for a free quote.
 
-**Campaign 1 — Service & Repair:**
-pool cleaning service, weekly pool maintenance, pool service near me, pool company
-near me, pool opening service, pool closing service, pool winterization, open my pool,
-pool repair, pool pump repair, pool filter repair, pool leak repair, pool heater repair,
-green pool cleanup, salt water pool service, vinyl pool liner replacement.
+### Sitelinks (→ page)
+New Pool Construction → /construction · Gunite & Vinyl Pools → /construction · Pool
+Renovations → /construction · Financing Options → /faq · Our Work → /our-work · Free
+Consultation → /booking
 
-**Campaign 2 — Construction & Renovation:**
-inground pool builder, pool builder near me, swimming pool construction, gunite pool
-builder, concrete pool installation, vinyl inground pool installation, new pool
-installation cost, build a pool Long Island, pool contractor Suffolk County, pool
-renovation, pool remodeling, pool resurfacing, pool deck and coping replacement, replace
-pool liner, update old pool, pool and spa builder, inground hot tub installation, salt
-water pool conversion.
-
-> Note: "Search themes" appear in Google's **Smart** campaign mode, which also opts you
-> into Display/YouTube and hides network + location-precision controls. Prefer **Expert
-> Mode** (uses real keywords + match types) when you can; if you launch in Smart mode,
-> tighten it after week one.
-
----
-
-## Negative keywords (shared list — apply to both campaigns)
-
-above ground, jobs, hiring, salary, careers, diy, how to, kit, intex, doughboy,
-stock tank, cost calculator, cheap, free, parts, chemicals, hot tub, commercial,
-municipal, city of, plunge pool, and any town outside the service area.
+### Callouts
+Licensed & Insured · 30+ Years Experience · CBP Certified Builder · BBB A+ Rated · Owner
+on Every Job · Financing Available · No Upselling · Free On-Site Consultation
 
 ---
 
-## Settings checklist (Expert Mode)
+## Campaign 2 — Vinyl Liners
 
-Switch out of the guided "Smart" flow to Expert Mode first.
+Landing page: `/vinyl-liners`. Fast sales cycle — recommended launch-first for tracking calibration.
 
-- [ ] Objective: **Leads**; Type: **Search**
-- [ ] Conversion tracking live: **Calls** + **Form submissions** (site form already fires a Google Ads conversion — confirm the conversion ID matches)
-- [ ] Bidding: **Maximize Clicks + max-CPC cap** ($3–$5) to start; move to **Maximize Conversions** after ~15+ conversions
+### Search themes / keywords (phrase match)
+vinyl pool liner replacement, pool liner installation, replace pool liner, new pool
+liner, inground pool liner, pool liner cost, pool liner quote, 20 mil pool liner, 28 mil
+pool liner, Loop-Loc liner, Merlin pool liner, pool liner near me, [town] pool liner.
+
+### Category tags
+Home Swimming Pools, Saunas & Spas; Pool Contractor; Pool Liner Replacement; Vinyl Pool
+Liner; Inground Pool Liner.
+
+### "What products/services are you advertising?"
+> Vinyl inground pool liner replacement and installation on the South Shore of Eastern
+> Suffolk County. Precision on-site measurement, custom fabrication, and vacuum-fit
+> installation of 20-mil and 28-mil liners from Loop-Loc, Merlin, and Latham.
+
+### Headlines (≤30)
+Kevin the Pool Man / Vinyl Pool Liner Experts / Pool Liner Replacement / New Liner, No
+Wrinkles / Loop-Loc, Merlin & Latham / 30+ Years Installing Liners / Custom-Fit Vinyl
+Liners / Licensed & Insured / Free On-Site Measurement / Owner-Operated, Not a Chain /
+Serving Eastern Suffolk / 20-mil & 28-mil Liners / BBB A+ Rated Pool Pros / Free Liner
+Quote / Fast, Clean Installation
+
+### Long headlines (≤90)
+- Custom-Fit Vinyl Pool Liner Replacement in Eastern Suffolk County
+- Loop-Loc, Merlin & Latham Liners — Precision-Measured, Zero-Wrinkle Installation
+- 30+ Years Replacing Pool Liners on Long Island's South Shore — Owner-Operated
+
+### Descriptions (≤90)
+- Precision-measured, zero-wrinkle vinyl liner installation. Loop-Loc, Merlin & Latham.
+- 30+ years, owner-operated. Free on-site measurement and a no-pressure quote.
+- Licensed & insured, BBB A+ rated. Serving Center Moriches to the Hamptons.
+- Time for a new liner? Call (631) 878-7796 for a free measurement and quote.
+
+### Sitelinks (→ page)
+Vinyl Liner Options → /vinyl-liners · 20-mil & 28-mil Liners → /vinyl-liners · Design Your
+Liner → /vinyl-liners · Free Measurement → /booking · Our Work → /our-work
+
+### Callouts
+Licensed & Insured · 30+ Years · Zero-Wrinkle Fit · Free Measurement · Top Liner Brands ·
+BBB A+ Rated · No Upselling · Owner-Operated
+
+---
+
+## Campaign 3 — Heaters
+
+Landing page: `/pool-heaters`. Launch timed to shoulder season (F-014 alignment).
+
+### Search themes / keywords (phrase match)
+pool heater installation, pool heater repair, pool heat pump, gas pool heater, propane
+pool heater, pool heater replacement, heat pump pool heater install, pool heater near me,
+swimming pool heater cost, [town] pool heater.
+
+### Category tags
+Home Swimming Pools, Saunas & Spas; Pool Contractor; Pool Heater Installation; Swimming
+Pool Heater; Heat Pump Installation.
+
+### "What products/services are you advertising?"
+> Swimming pool heater sales, installation, repair, and replacement on the South Shore of
+> Eastern Suffolk County. Heat pumps and natural gas/propane heaters, all major brands
+> serviced, to extend the swim season from April through October.
+
+### Headlines (≤30)
+Kevin the Pool Man / Pool Heater Installation / Heat Pump & Gas Heaters / Extend Your Swim
+Season / Pool Heater Repair & Install / Swim April to October / 30+ Years of Experience /
+Licensed & Insured / All Major Heater Brands / Free Heater Quote / Owner-Operated Service /
+Serving Eastern Suffolk / Gas & Propane Heaters / Fast Heater Repair / BBB A+ Rated Pool
+Pros
+
+### Long headlines (≤90)
+- Pool Heater Installation & Repair Across Eastern Suffolk County — 30+ Years
+- Heat Pumps, Gas & Propane Heaters — Sales, Install & Repair, All Major Brands
+- Extend Your Swim Season April Through October — Licensed & Insured Pool Pros
+
+### Descriptions (≤90)
+- Heat pump & gas heater sales, installation, and repair. All major brands serviced.
+- Extend your swim season from April through October. 30+ years, owner-operated.
+- Licensed & insured, BBB A+ rated. Serving Center Moriches to the Hamptons.
+- Heater down? Call (631) 878-7796 for fast repair or a free install quote.
+
+### Sitelinks (→ page)
+Heat Pumps → /pool-heaters/heat-pumps · Gas Heaters → /pool-heaters/gas-heaters · Heater
+Repair → /pool-heaters/heater-repair · Heater Replacement → /pool-heaters/heater-replacement ·
+Free Quote → /booking
+
+### Callouts
+Licensed & Insured · 30+ Years · All Major Brands · Fast Repair · Free Quotes · BBB A+
+Rated · Owner-Operated · Extend Your Season
+
+---
+
+## Negative keywords (shared list — apply to all campaigns)
+
+above ground, jobs, hiring, salary, careers, diy, how to, kit, intex, doughboy, stock
+tank, cost calculator (unless bidding cost intent), cheap, free (guard), parts, chemicals,
+hot tub cover, commercial, municipal, city of, plunge pool, and any town outside the
+service area.
+
+**Cross-campaign negatives:** add liner/heater terms as negatives in Construction (and vice
+versa) so queries don't leak between campaigns.
+
+---
+
+## Settings checklist (Expert Mode preferred over Smart)
+
+Smart mode auto-opts into Display/YouTube and hides network + location controls. Prefer
+Expert Mode; if you launch Smart, tighten after week one.
+
+- [ ] Objective **Leads**, type **Search**
+- [ ] Conversion tracking live BEFORE spend: **Calls** (call assets + call reporting, 60s min duration) · **Forms** (verify real mechanism) · **Bookings** (Cal.com completion) · **GA4 linked, enhanced conversions on**
+- [ ] Bidding: **Maximize Clicks + max-CPC cap** ($3–$5) → **Maximize Conversions** after ~15–30 conv → **Target CPA per campaign** (liner tCPA ≠ construction tCPA)
 - [ ] Networks: **Search partners OFF, Display OFF**
-- [ ] Locations: **"Presence"** (not "presence or interest"); towns listed above
-- [ ] Match type: **phrase** (not broad)
-- [ ] Negative keyword list applied to both campaigns
-- [ ] Real phone (631) 878-7796 on ads AND landing pages
-- [ ] Campaign 1 → `/services`; Campaign 2 → `/construction` (not homepage)
-- [ ] Separate daily budgets per campaign
+- [ ] Locations: **"Presence"**, not "presence or interest"
+- [ ] Match type **phrase** to start (broad only later with smart bidding + clean data)
+- [ ] Negative list applied to all campaigns; cross-campaign negatives set
+- [ ] RSAs + **call assets** (NOT call-only ads); business-hours call scheduling (human-first rule)
+- [ ] Each campaign → its own budget + geo; landing page = service page, not homepage
+- [ ] UTMs on every ad URL (F-023); leads resolve to Service Location in the spine
 
 ---
 
-## Local Services Ads (do this in parallel — highest ROI)
+## Local Services Ads (do first — highest ROI, longest clock)
 
-Now that Kevin is licensed & insured, apply for **Local Services Ads / "Google Guaranteed"**
-at google.com/localservices. Separate platform from Google Ads. Pay-per-lead, appears
-*above* search ads, green-check badge. Requires license + insurance certificate +
-background check; verification takes ~1–2 weeks — start now.
-Note: Google is migrating LSA toward Performance Max pay-per-lead, so the flow may differ.
+Now that Kevin is licensed & insured, LSA is unblocked. Badge is now **"Google Verified"**
+(the old Google Guaranteed money-back guarantee ended Nov 2025; verification requirements
+unchanged). LSA is migrating into Google Ads as a Performance Max pay-per-lead campaign
+(Search + Maps only, still keywordless/pay-per-lead) — the UI may differ from older guides.
+Full setup, blockers, and economics live in the BenchworksAI strategy doc §4. Start the
+verification clock (2–5 wks) immediately; use the wait to build these paused campaigns and
+run the review engine.
 
 ---
 
 ## Known caveats
-
-- Google rating is **4.4** — don't claim 5 stars in ads.
-- "Family-owned" is only in schema/a review, not headline copy — prefer "owner-operated / Kevin on every job."
-- Residential inground only — **above-ground explicitly not serviced** (keep it as a negative keyword).
+- Google rating is **4.4** — don't claim 5 stars.
+- "Family-owned" only in schema/a review — prefer "owner-operated / Kevin on every job."
+- Residential inground only; above-ground explicitly excluded (kept as a negative).
