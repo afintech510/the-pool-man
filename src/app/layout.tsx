@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -110,6 +111,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-slate-900">
         <GoogleTags />
         <CallConversion />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Pd9OEpMnB8XRVbi9oteP6A"
+          strategy="afterInteractive"
+        />
         <JsonLd data={[localBusinessJsonLd, organizationJsonLd]} />
         {children}
       </body>
