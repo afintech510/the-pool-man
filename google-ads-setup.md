@@ -267,6 +267,65 @@ Expert Mode; if you launch Smart, tighten after week one.
 
 ---
 
+## Conversion tracking — exact wiring (ALREADY BUILT, just unconfigured)
+
+The site is fully instrumented. gtag.js (GA4 + Google Ads on one library) loads via
+`GoogleTags` in `layout.tsx`, and every conversion event is coded and gated behind env
+vars. Nothing needs building — you create the conversions in Google Ads and set the env
+vars, then **rebuild** (NEXT_PUBLIC_* are inlined at build time, so a redeploy is required).
+
+**Correction to the strategy doc:** there is **no `/thank-you` page**. The contact form
+shows an inline success state and fires the conversion from a client effect *after the
+server confirms the Supabase save* (`contact-form.tsx` → `state.ok`). Don't build tracking
+around a thank-you URL.
+
+| Event | Fires when | Code | Env var (label) |
+|---|---|---|---|
+| **Contact submit** | Server confirms lead saved | `contact-form.tsx:34` | `NEXT_PUBLIC_ADS_LABEL_CONTACT` |
+| **Booking confirmed** (real) | Cal.com `bookingSuccessful` postMessage | `booking-embed.tsx:21` | `NEXT_PUBLIC_ADS_LABEL_BOOKING_CONFIRMED` |
+| **Booking page reached** (soft proxy) | `/booking` mounts | `booking-conversion.tsx` | `NEXT_PUBLIC_ADS_LABEL_BOOKING` |
+| **Phone click** | Any `tel:` link clicked, site-wide (delegated listener) | `call-conversion.tsx` | `NEXT_PUBLIC_ADS_LABEL_CALL` |
+| GA4 pageviews + SPA routes | Every navigation | `google-tags.tsx` | `NEXT_PUBLIC_GA_ID` |
+
+### Setup steps
+1. **Google Ads → Tools → Conversions**, create 4 actions:
+   - *Contact form* (category: Submit lead form) — count **One**
+   - *Booking confirmed* (Submit lead form / Book appointment) — count **One**
+   - *Phone click* (Website, phone-click) — count **One**
+   - *Calls from ads* (Phone calls — call-asset calls, **60s** min duration) — **no site code**, Google tracks it via the call asset forwarding number
+2. Copy each action's **conversion ID** (`AW-XXXXXXXXXX`, same for all) and **label**
+   (`AbC-D_efG-h12_3-Xyz`, unique per action).
+3. Set these in the **VPS build environment** (`.env.local`), then redeploy:
+   ```
+   NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX            # optional but recommended
+   NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXXX   # required for any Ads conversion
+   NEXT_PUBLIC_ADS_LABEL_CONTACT=...
+   NEXT_PUBLIC_ADS_LABEL_BOOKING_CONFIRMED=...
+   NEXT_PUBLIC_ADS_LABEL_CALL=...
+   NEXT_PUBLIC_ADS_LABEL_BOOKING=...         # optional soft proxy
+   ```
+4. Redeploy (build inlines the vars): `git push; ssh hampton-vps "cd /opt/poolman && git fetch --all --prune && git reset --hard origin/master && docker compose up -d --build"`
+5. Verify with Google Tag Assistant / the Ads "Diagnostics" tab that each event fires.
+
+### Bidding hygiene
+- **Primary** conversions (feed Maximize Conversions / tCPA): Contact submit, Booking
+  confirmed, Calls from ads, Phone click.
+- **Secondary / observe-only:** "Booking page reached" — it's a soft proxy; making it
+  primary would train bidding on page views, not leads.
+
+### Watch items
+- **Honeypot fires a conversion.** The server returns `ok:true` on a tripped honeypot
+  (to fool bots) — which also triggers the client conversion event, with **no lead saved**.
+  A JS-executing bot could inflate the Contact conversion above actual leads. If
+  conversions consistently exceed Supabase leads, this is why; consider returning a
+  distinct non-`ok` state for the honeypot path, or reconcile against the leads table.
+- **Enhanced conversions** aren't implemented in code (no hashed user data passed). Enable
+  via Google's automatic/tag-based method in the Ads UI if wanted; don't assume the code does it.
+- `tel:` click ≠ a completed call — it's a click-to-call intent. The real answered-call
+  metric is the separate "Calls from ads" (60s) action.
+
+---
+
 ## Local Services Ads (do first — highest ROI, longest clock)
 
 Now that Kevin is licensed & insured, LSA is unblocked. Badge is now **"Google Verified"**
