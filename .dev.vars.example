@@ -1,0 +1,37 @@
+# Cloudflare Workers runtime vars/secrets for local `wrangler dev` / `opennextjs-cloudflare preview`.
+# Copy to `.dev.vars` (gitignored) and fill in real values for local testing.
+# In production, set these with `wrangler secret put <NAME>` (see deploy notes) —
+# do NOT put real values in wrangler.jsonc `vars`.
+
+# Supabase — required by the contact Server Action and all four webhook handlers
+SUPABASE_SERVICE_ROLE_KEY=
+
+# Brevo — gates the office notification email on contact-form submit; omit to no-op
+BREVO_API_KEY=
+BREVO_SENDER_EMAIL=
+BREVO_SENDER_NAME=
+
+# Webhook HMAC secrets — one per provider route under src/app/api/webhooks/*
+SHOPIFY_WEBHOOK_SECRET=
+CALCOM_WEBHOOK_SECRET=
+QUO_WEBHOOK_SECRET=
+
+# Google Search Console HTML-tag verification (optional; can instead verify via
+# Cloudflare DNS TXT with no code)
+GOOGLE_SITE_VERIFICATION=
+
+# --- Build-time only (NOT runtime secrets) ---
+# These 9 NEXT_PUBLIC_* vars are inlined into the client bundle at BUILD time by
+# `opennextjs-cloudflare build`, not read at runtime. They must be present in the
+# shell environment (or Workers Builds "Build variables") when you build, not
+# just in this file. Real values live on the VPS at /opt/poolman/.env.local.
+#
+# NEXT_PUBLIC_SUPABASE_URL=
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=
+# NEXT_PUBLIC_CALCOM_URL=
+# NEXT_PUBLIC_GA_ID=
+# NEXT_PUBLIC_GOOGLE_ADS_ID=
+# NEXT_PUBLIC_ADS_LABEL_CONTACT=
+# NEXT_PUBLIC_ADS_LABEL_BOOKING=
+# NEXT_PUBLIC_ADS_LABEL_BOOKING_CONFIRMED=
+# NEXT_PUBLIC_ADS_LABEL_CALL=

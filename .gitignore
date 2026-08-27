@@ -14,6 +14,9 @@ node_modules/
 .env
 .env.local
 .env.*.local
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
 
 # misc
 *.log
@@ -32,3 +35,8 @@ npm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare / opennext
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
