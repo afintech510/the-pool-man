@@ -546,6 +546,7 @@ Resolved the two landing-page compliance blockers flagged above for the Pool Con
 - **Financing disclosure added on the same screen as the 2.99% rate.** `src/components/marketing/financing-banner.tsx` (shared component — also renders on the homepage) now carries small-print naming HFS Financial as a **third-party lender, not The Pool Man**, stating the rate is the lowest available and creditworthiness-dependent, "not all applicants will qualify," "subject to credit approval," rates/terms set by lender and may change, "not an offer or commitment to lend."
 - **FAQ rate mention** in `construction/page.tsx` now names HFS as third-party lender + adds the credit-approval qualifier.
 
+- **FAQ page disclosure added.** `src/app/(marketing)/faq/page.tsx` financing answer now names HFS Financial as third-party lender (not The Pool Man) + OAC / not-all-qualify qualifiers. This answer also feeds the page's FAQPage JSON-LD, so the structured data matches.
+
 **Still open (not done here):**
 - No formal **representative example** (explicit APR range + example monthly payment) on-page — Google's Financial Services policy prefers one. Blocked on real HFS APR band + example payment from owner. Until then, do not put "2.99%" in ad copy.
-- Same 2.99% rate appears in `src/app/(marketing)/faq/page.tsx` without a disclosure — not yet treated.

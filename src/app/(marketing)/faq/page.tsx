@@ -120,7 +120,7 @@ const faqs = [
     questions: [
       {
         q: "Is financing available to build a pool?",
-        a: "Yes, The Pool Man works with HFS (Home Finance Specialists) to provide financing. Rates as low as 2.99%, loans up to $250,000, terms up to 20 years. Inquiry does not affect your credit.",
+        a: "Yes. Financing is provided by HFS Financial (Home Finance Specialists), a third-party lender — not by The Pool Man. Rates as low as 2.99%, loans up to $250,000, terms up to 20 years. The rate shown is the lowest available and depends on creditworthiness, loan amount, and term; not all applicants will qualify, and all financing is subject to credit approval. A pre-qualification inquiry does not affect your credit.",
       },
       {
         q: "Does The Pool Man offer free estimates for pool construction?",
