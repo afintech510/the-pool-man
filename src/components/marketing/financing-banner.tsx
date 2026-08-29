@@ -49,6 +49,14 @@ export function FinancingBanner() {
             >
               Ask About Financing
             </a>
+            <p className="mt-4 text-xs leading-relaxed text-pool-300">
+              Financing is provided by HFS Financial, a third-party lender
+              &mdash; not by The Pool Man. The rate shown is the lowest
+              available and depends on creditworthiness, loan amount, and
+              term; not all applicants will qualify. All financing is subject
+              to credit approval. Actual rates and terms are set by the lender
+              and may change. This is not an offer or commitment to lend.
+            </p>
           </div>
         </div>
       </Container>

@@ -1,4 +1,5 @@
-import { pageSeo } from "@/lib/seo";
+import { pageSeo, breadcrumbJsonLd, serviceJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeader } from "@/components/ui/section";
@@ -20,9 +21,38 @@ export const metadata = {
     "pool construction Suffolk County, inground pool builder Long Island, gunite pool builder, vinyl pool construction, custom pool design, pool contractor Center Moriches, swimming pool installation Suffolk County NY",
 };
 
+// Source of truth for the on-page FAQ snippet — reused by the FAQPage schema so
+// the marked-up questions always match the visible text.
+const constructionFaqs = [
+  { q: "How long does it take to build a pool?", a: "The average time is 4–6 weeks from breaking ground, depending on size, design, and weather. Permits are handled before construction starts, and that timeline varies by township and jurisdiction." },
+  { q: "How much does a pool cost?", a: "Prices vary by size, materials, and features. We provide free on-site estimates. Financing is available through HFS Financial, a third-party lender, with rates as low as 2.99% and terms up to 20 years. Rates depend on creditworthiness, loan amount, and term; not all applicants will qualify, and all financing is subject to credit approval." },
+  { q: "Do you handle permits?", a: "Yes. We manage the permit process with your local township — surveys, applications, and inspections." },
+  { q: "Do I need a fence?", a: "Yes, a barrier (fence or property perimeter) is required by code in Suffolk County for safety." },
+  { q: "Gunite or vinyl — which is better?", a: "Both are great. Gunite offers unlimited design flexibility and lasts 50+ years. Vinyl is more cost-effective and faster to install. Kevin will help you decide during the consultation." },
+];
+
+const constructionJsonLd = [
+  serviceJsonLd({
+    serviceType: "Swimming Pool Construction",
+    description:
+      "Custom gunite and vinyl inground pool construction across Center Moriches and Eastern Suffolk County, NY.",
+  }),
+  breadcrumbJsonLd("/construction"),
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: constructionFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  },
+];
+
 export default function ConstructionPage() {
   return (
     <>
+      <JsonLd data={constructionJsonLd} />
       {/* Hero with conversion focus */}
       <section className="relative overflow-hidden">
         <Image
@@ -98,7 +128,8 @@ export default function ConstructionPage() {
               Gunite Swimming Pools
             </h3>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              The gold standard in inground pool construction. Gunite
+              A durable, fully custom approach to inground pool
+              construction. Gunite
               (shotcrete) pools are built with a steel-reinforced concrete
               shell that can be shaped into any size, depth, or design.
               Finished with plaster, pebble, or tile for a custom look that
@@ -303,13 +334,7 @@ export default function ConstructionPage() {
           title="Common construction questions"
         />
         <div className="mt-8 max-w-3xl space-y-6">
-          {[
-            { q: "How long does it take to build a pool?", a: "The average time is 4–6 weeks from breaking ground, depending on size, design, and weather. Permits are handled before construction starts, and that timeline varies by township and jurisdiction." },
-            { q: "How much does a pool cost?", a: "Prices vary by size, materials, and features. We provide free on-site estimates. Financing is available through HFS with rates as low as 2.99% and terms up to 20 years." },
-            { q: "Do you handle permits?", a: "Yes. We manage the permit process with your local township — surveys, applications, and inspections." },
-            { q: "Do I need a fence?", a: "Yes, a barrier (fence or property perimeter) is required by code in Suffolk County for safety." },
-            { q: "Gunite or vinyl — which is better?", a: "Both are great. Gunite offers unlimited design flexibility and lasts 50+ years. Vinyl is more cost-effective and faster to install. Kevin will help you decide during the consultation." },
-          ].map((faq) => (
+          {constructionFaqs.map((faq) => (
             <div key={faq.q}>
               <h3 className="font-semibold text-slate-900">{faq.q}</h3>
               <p className="mt-1 text-sm text-slate-600">{faq.a}</p>
