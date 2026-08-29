@@ -49,7 +49,19 @@ export function FinancingBanner() {
             >
               Ask About Financing
             </a>
-            <p className="mt-4 text-xs leading-relaxed text-pool-300">
+            <div className="mt-4 rounded-lg bg-white/5 border border-white/10 p-3">
+              <p className="text-xs font-semibold text-pool-100">
+                Representative example
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-pool-200">
+                A $250,000 loan at 2.99% APR over 20 years (240 monthly
+                payments) equals about $1,385/month. Total of payments
+                &asymp; $332,458, of which &asymp; $82,458 is interest.
+                Example uses the lowest advertised rate; your rate, payment,
+                and total cost depend on credit and are subject to approval.
+              </p>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-pool-300">
               Financing is provided by HFS Financial, a third-party lender
               &mdash; not by The Pool Man. The rate shown is the lowest
               available and depends on creditworthiness, loan amount, and
